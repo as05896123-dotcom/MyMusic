@@ -1,5 +1,4 @@
-# 👇 التعديل هنا: رجعنا النسخة لـ 1.25 عشان المكتبات تشتغل
-FROM golang:1.25-bookworm AS builder
+FROM golang:1.25.5-bookworm AS builder
 
 WORKDIR /build
 
@@ -13,11 +12,11 @@ RUN apt-get update && \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
-COPY go.mod ./
-COPY . .
-
-# سيقوم هذا الأمر بتحميل المكتبات المتوافقة مع 1.25
+COPY go.mod go.sum ./
 RUN go mod tidy
+
+COPY install.sh ./
+COPY . .
 
 RUN chmod +x install.sh && \
     ./install.sh -n --quiet --skip-summary && \
