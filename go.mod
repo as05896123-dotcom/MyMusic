@@ -1,6 +1,6 @@
 module main
 
-go 1.25.5
+go 1.22.0
 
 require (
 	github.com/Laky-64/gologging v1.1.0
@@ -12,7 +12,7 @@ require (
 	github.com/traefik/yaegi v0.16.1
 	github.com/zmb3/spotify/v2 v2.4.3
 	
-	// 👇 مكتبات الأذان والبوت المضافة
+	// 👇 مكتبات الأذان والبوت
 	github.com/robfig/cron/v3 v3.0.1
 	go.mongodb.org/mongo-driver v1.16.0
 	go.mongodb.org/mongo-driver/v2 v2.4.1
