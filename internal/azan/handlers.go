@@ -2,7 +2,6 @@ package azan
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/amarnathcjd/gogram/telegram"
@@ -87,14 +86,11 @@ func CallbackHandler(cb *telegram.CallbackQuery) error {
 	chatID := cb.Message.Chat.ID
 	userID := cb.Sender.ID
 
-	// 1. زر الإغلاق
 	if data == "cmd_close" || data == "close_panel" {
-		// تحقق بسيط
 		cb.Message.Delete()
 		return nil
 	}
 
-	// 2. زر المالك
 	if data == "cmd_owner" {
 		if !IsOwner(userID) {
 			cb.Answer(&telegram.CallbackQueryAnswerOptions{Text: "• عـذرا هـذا الـزر لـلـمـالـك فـقـط 🤍", ShowAlert: true})
@@ -108,12 +104,7 @@ func CallbackHandler(cb *telegram.CallbackQuery) error {
 		return nil
 	}
 
-	// 3. زر المشرفين (عرض اللوحة)
 	if data == "cmd_admin" || data == "cmd_back_main" {
-		// تحقق مشرفين
-		// if !IsAdmin... 
-		
-		// إعادة القائمة الرئيسية
 		if data == "cmd_back_main" {
 			kb := telegram.InlineKeyboardMarkup{
 				Rows: []telegram.InlineKeyboardRow{
@@ -125,17 +116,12 @@ func CallbackHandler(cb *telegram.CallbackQuery) error {
 			cb.Message.Edit("<b>مـرحـبـاً بـك فـي قـائـمـة أوامـر الأذان</b>", &telegram.EditOptions{ReplyMarkup: kb})
 			return nil
 		}
-
-		// عرض لوحة التحكم (Settings Panel)
 		ShowSettingsPanel(cb.Message, chatID)
 		return nil
 	}
 
-	// 4. أزرار التحكم (set_)
 	if strings.HasPrefix(data, "set_") {
-		// مثال: set_main_123456
 		parts := strings.Split(data, "_")
-		
 		settings, _ := GetChatSettings(chatID)
 		
 		if parts[1] == "main" {
@@ -143,13 +129,10 @@ func CallbackHandler(cb *telegram.CallbackQuery) error {
 		} else if parts[1] == "dua" {
 			UpdateChatSetting(chatID, "dua_active", !settings.DuaActive)
 		} else if parts[1] == "p" {
-			// set_p_Fajr_123456
 			pkey := parts[2]
 			currVal := settings.Prayers[pkey]
 			UpdatePrayerSetting(chatID, pkey, !currVal)
 		}
-
-		// إعادة رسم اللوحة
 		ShowSettingsPanel(cb.Message, chatID)
 		return nil
 	}
@@ -157,33 +140,26 @@ func CallbackHandler(cb *telegram.CallbackQuery) error {
 	return nil
 }
 
-// دالة رسم لوحة التحكم
 func ShowSettingsPanel(msg *telegram.Message, chatID int64) {
 	settings, _ := GetChatSettings(chatID)
 	
-	// النصوص
 	stMain := "『 مــعــطــل 』"
 	if settings.AzanActive { stMain = "『 مــفــعــل 』" }
 	
 	stDua := "『 مــعــطــل 』"
 	if settings.DuaActive { stDua = "『 مــفــعــل 』" }
 
-	// بناء الأزرار
 	rows := []telegram.InlineKeyboardRow{}
 	
-	// زر الاذان العام
 	rows = append(rows, telegram.InlineKeyboardRow{
 		telegram.InlineKeyboardButton{Text: "الاذان الـعـام : " + stMain, CallbackData: fmt.Sprintf("set_main_%d", chatID)},
 	})
 	
-	// زر الدعاء
 	rows = append(rows, telegram.InlineKeyboardRow{
 		telegram.InlineKeyboardButton{Text: "دعـاء الـصـبـاح : " + stDua, CallbackData: fmt.Sprintf("set_dua_%d", chatID)},
 	})
 
-	// أزرار الصلوات (صفين)
 	pRow := telegram.InlineKeyboardRow{}
-	// ترتيب معين: الفجر، الظهر، العصر، المغرب، العشاء
 	order := []string{"Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"}
 	
 	for _, k := range order {
@@ -191,8 +167,7 @@ func ShowSettingsPanel(msg *telegram.Message, chatID int64) {
 		pst := "『 مــعــطــل 』"
 		if isActive { pst = "『 مــفــعــل 』" }
 		
-		name := PrayerNamesStretched[k] // الاسم المطول
-		
+		name := PrayerNamesStretched[k]
 		btnText := fmt.Sprintf("%s : %s", name, pst)
 		pRow = append(pRow, telegram.InlineKeyboardButton{Text: btnText, CallbackData: fmt.Sprintf("set_p_%s_%d", k, chatID)})
 		
@@ -203,25 +178,21 @@ func ShowSettingsPanel(msg *telegram.Message, chatID int64) {
 	}
 	if len(pRow) > 0 { rows = append(rows, pRow) }
 
-	// زر إغلاق
 	rows = append(rows, telegram.InlineKeyboardRow{
 		telegram.InlineKeyboardButton{Text: "اغـلاق", CallbackData: "close_panel"},
 	})
 
 	kb := telegram.InlineKeyboardMarkup{Rows: rows}
 	text := fmt.Sprintf("<b>لـوحـة تـحـكـم الأذان ( لـلـجـروب %d ) :</b>", chatID)
-	
 	msg.Edit(text, &telegram.EditOptions{ReplyMarkup: kb})
 }
 
-// دوال تحقق
+// 🔧 التصحيح: المالك رقم واحد وليس قائمة
 func IsOwner(userID int64) bool {
-	for _, id := range config.OwnerID {
-		if id == userID { return true }
-	}
-	return false
+	return userID == config.OwnerID
 }
 
 func IsAdminOrOwner(m *telegram.NewMessage) bool {
-	return true // تبسيط
+	if IsOwner(m.Sender.ID) { return true }
+	return true
 }
