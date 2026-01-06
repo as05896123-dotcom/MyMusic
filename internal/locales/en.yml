@@ -1,954 +1,951 @@
-name: "🇺🇸 English"
+name: "الـعـربـيـة 🤍"
 
 # buttons
-ADD_ME_BTN: "⚡ Add Me to Your group"
-BROADCAST_CANCEL_BTN: "🚫 Cancel Broadcast"
-CLOSE_BTN: "Close"
-DOWNLOAD_CANCEL_BTN: "🚦 Cancel Downloading"
-GC_HELP_BTN: "📒 Commands"
+ADD_ME_BTN: "أضـفـنـي لـمـجـمـوعـتـك 💝"
+BROADCAST_CANCEL_BTN: "إلـغـاء الإذاعــة 🧡"
+CLOSE_BTN: "إغــلاق 💜"
+DOWNLOAD_CANCEL_BTN: "إلـغـاء الـتـحـمـيـل 🧡"
+GC_HELP_BTN: "الأوامــر 🤍"
 
-START_HELP_BTN: "❓ Help & Commands"
+START_HELP_BTN: "الـمـسـاعـدة والأوامــر 💞"
 
-UPDATES_BTN: "📢 Updates"
-SUPPORT_BTN: "💬 Support"
+UPDATES_BTN: "الـتـحـديـثـات 🩵"
+SUPPORT_BTN: "الـدعــم 🧚"
 
-HELP_ADMINS_BTN: "🛠 Admins"
-HELP_PUBLIC_BTN: "🌍 Public"
-HELP_OWNER_BTN: "👑 Owner"
-HELP_SUDOERS_BTN: "⚡ Sudoers"
+HELP_ADMINS_BTN: "الـمـشـرفـيـن 🤍"
+HELP_PUBLIC_BTN: "الـعـامــة 💙"
+HELP_OWNER_BTN: "الـمـالــك 💜"
+HELP_SUDOERS_BTN: "الـمـطـوريـن ⚡"
 
-BACK_BTN: "⬅️ Back"
+BACK_BTN: "الـرجــوع 🧡"
 
 # basically this string used in /command [bool]
-invalid_bool: "⚠️ <b>Invalid value.</b>\nUse 'enable' or 'disable'."
+invalid_bool: "<b>قـيـمـة غـيـر صـالـحـة.</b> 🧡\nاسـتـخـدم 'تـفـعـيـل' أو 'تـعـطـيـل' ."
 
-active_chats_info: "📊 <b>Active Chats:</b>\n\nThere are <i>{count}</i> active chats across the bot system."
-active_chats_info_with_broken: "📊 <b>Active Chats:</b>\n\nThere are <i>{count}</i> active chats across the bot system, but <i>{broken}</i> of them may have issues displaying correctly."
+active_chats_info: "<b>الـمـحـادثـات الـنـشـطـة:</b>\n\nهـنـاك <i>{count}</i> مـحـادثـة نـشـطـة عـبـر نـظـام الـبـوت 🤍."
+active_chats_info_with_broken: "<b>الـمـحـادثـات الـنـشـطـة:</b>\n\nهـنـاك <i>{count}</i> مـحـادثـة نـشـطـة عـبـر نـظـام الـبـوت، ولـكـن <i>{broken}</i> مـنـهـا قـد تـواجـه مـشـاكـل فـي الـعـرض 🧡."
 
 
 # 🚫 Assistant Restricted / Banned
 assistant_restricted_warning: |
-  ⚠️ <b>Assistant Restricted</b>
+  <b>تـم تـقـيـيـد الـمـسـاعـد</b> 🧡
 
-  The assistant {assistant} (ID: <code>{id}</code>) has been <b>banned</b> or restricted in this chat.
-  I cannot play music, manage the queue, or clean up tracks while this continues.
+  الـمـسـاعـد {assistant} (ID: <code>{id}</code>) تـم <b>حـظـره</b> أو تـقـيـيـده فـي هـذه الـدردشـة.
+  لا يـمـكـنـنـي تـشـغـيـل الـمـوسـيـقـى أو إدارة الـقـائـمـة مـا دام هـذا مـسـتـمـراً.
 
-  <i>Unban the assistant to restore all music features 🎵</i>
+  <i>قـم بـفـك حـظـر الـمـسـاعـد لـاسـتـعـادة جـمـيـع مـيـزات الـمـوسـيـقـى 🧚</i>
 
 
 # 🧩 Common auth messages
-auth_no_user: "⚠️ Please provide a user — use:\n{cmd} [user_id] or reply to a user's message."
-user_extract_fail: "⚠️ Unable to get that user: <i>{error}</i>"
-auth_limit_reached: "⚠️ This chat has reached the maximum authorized users limit ({limit}). Please remove someone before adding a new one."
-already_authed: "⚠️ That user is already authorized — no need to add them again."
+auth_no_user: "يـرجـى تـحـديـد مـسـتـخـدم — اسـتـخـدم:\n{cmd} [مـعـرف_الـمـسـتـخـدم] أو قـم بـالـرد عـلـى رسـالـة الـمـسـتـخـدم 💝."
+user_extract_fail: "تـعـذر الـحـصـول عـلـى هـذا الـمـسـتـخـدم: <i>{error}</i> 🧡"
+auth_limit_reached: "وصـلـت هـذه الـدردشـة إلـى الـحـد الأقـصـى لـلـمـسـتـخـدمـيـن الـمـعـتـمـديـن ({limit}). يـرجـى إزالـة شـخـص مـا قـبـل إضـافـة شـخـص جـديـد 💜."
+already_authed: "هـذا الـمـسـتـخـدم مـعـتـمـد بـالـفـعـل — لا حـاجـة لإضـافـتـه مـرة أخـرى 💕."
 
 # 🤖 Add auth
-cannot_authorize_user: "⚠️ This user cannot be authorized.\nThe bot owner, the bot itself, or yourself do not require authorization."
-addauth_user_is_admin: "⚠️ This user is already a chat administrator. No authorization is required."
-addauth_bot_user: "🤖 You can’t add a bot to the auth list — authusers must be human!"
-addauth_add_fail: "❌ Failed to add authorized user: {error}"
-addauth_success_with_count: "✅ Added {user}.\nNow {count}/{limit} authorized users."
-addauth_success: "✅ Successfully added {user} to the authorized users list."
+cannot_authorize_user: "لا يـمـكـن اعـتـمـاد هـذا الـمـسـتـخـدم.\nمـالـك الـبـوت، أو الـبـوت نـفـسـه، أو أنـت لا تـحـتـاجـون إلـى تـفـويـض 🧡."
+addauth_user_is_admin: "هـذا الـمـسـتـخـدم مـشـرف فـي الـدردشـة بـالـفـعـل. لا مـطـلـوب تـفـويـض 🤍."
+addauth_bot_user: "لا يـمـكـنـك إضـافـة بـوت إلـى قـائـمـة الـتـفـويـض — يـجـب أن يـكـون الـمـسـتـخـدمـون بـشـراً! ⚡"
+addauth_add_fail: "فـشـلـت إضـافـة الـمـسـتـخـدم الـمـعـتـمـد: {error} 🧡"
+addauth_success_with_count: "تـمـت إضـافـة {user}.\nالآن {count}/{limit} مـسـتـخـدمـيـن مـعـتـمـديـن 💝."
+addauth_success: "تـمـت إضـافـة {user} بـنـجـاح إلـى قـائـمـة الـمـسـتـخـدمـيـن الـمـعـتـمـديـن 💞."
 
 # 🤖 Bot Added to Chat
-bot_added_normal: "🎵 Thanks for adding me! Use /play [song] to start playing music."
+bot_added_normal: "شـكـراً لإضـافـتـي! اسـتـخـدم /play [الأغـنـيـة] لـبـدء تـشـغـيـل الـمـوسـيـقـى 🧚💝."
 
 # 🛠️ Bot Added During Maintenance
-bot_added_maintenance: "⚠️ I'm currently under maintenance and will be back soon. Thanks for your patience! ⏰"
-maint_reason_generic: "<i>📝 Reason: {reason}</i>"
+bot_added_maintenance: "أنـا حـالـيـاً تـحـت الـصـيـانـة وسـأعـود قـريـبـاً. شـكـراً لـصـبـرك! 💜"
+maint_reason_generic: "<i>🤍 الـسـبـب: {reason}</i>"
 
 # ⚠️ Bot Demotion
 bot_demotion_goodbye: |
-  <b>⚠️ Permission Lost</b>
+  <b>فـقـدان الإذن</b> 🧡
 
-  I’ve been <b>demoted from admin</b> and can’t perform my tasks anymore.
-  Without proper rights, I’m unable to function here, so I’ll be <i>leaving the chat now</i>.
+  لـقـد تـم <b>تـنـزيـل رتـبـتـي مـن مـشـرف</b> ولا يـمـكـنـنـي أداء مـهـامـي بـعـد الآن.
+  بـدون الـحـقـوق الـمـنـاسـبـة، لا أسـتـطـيـع الـعـمـل هـنـا، لـذا سـأغـادر <i>الـدردشـة الآن</i>.
 
-  <b>Goodbye 👋</b>
+  <b>وداعــاً 🧡</b>
 
-broadcast_already_running: "⚠️ A broadcast is already running.\n\nPlease wait for it to complete or cancel it first using:\n• <code>/broadcast -cancel</code>\n• Or click the Cancel button on the progress message"
-broadcast_parse_failed: "❌ Failed to parse broadcast command:\n<code>{error}</code>"
-broadcast_no_content: "⚠️ No content provided for broadcast.\n\n<b>Usage:</b> <code>{cmd} [text or reply to message]</code>\n\n<b>Example:</b>\n<code>{cmd} Hello everyone!</code>"
-broadcast_fetch_chats_failed: "❌ Failed to fetch served chats:\n<code>{error}</code>"
-broadcast_fetch_users_failed: "❌ Failed to fetch served users:\n<code>{error}</code>"
-broadcast_no_targets: "⚠️ No targets found for broadcast.\n\nMake sure you haven't excluded all targets with flags."
-broadcast_initializing: "📡 Initializing broadcast...\n\nPlease wait..."
-broadcast_cancelled_header: "🚫 Broadcast Cancelled"
-broadcast_completed_header: "✅ Broadcast Completed"
-broadcast_progress_header: "📡 Broadcasting..."
-broadcast_total_chats: "📊 Total Chats: {done}/{total} ({progress}%)"
-broadcast_total_users: "👥 Total Users: {done}/{total} ({progress}%)"
-broadcast_failed_chats: "❌ Failed Chats: {count}"
-broadcast_failed_users: "❌ Failed Users: {count}"
-broadcast_delay: "⏱ Delay: {delay}s"
-broadcast_elapsed: "⏰ Elapsed: {elapsed}"
-broadcast_eta: "⏳ ETA: {eta}"
-broadcast_success_rate: "✨ Success Rate: {rate}% ({sent}/{total})"
-broadcast_not_running: "ℹ️ No broadcast is currently running."
-broadcast_cancel_success: "🚫 Broadcast cancelled successfully."
-broadcast_cancel_owner_only: "⚠️ Only the owner can cancel broadcasts."
-broadcast_cancel_none_running: "ℹ️ No broadcast is currently running."
-broadcast_cancel_done: "🚫 Broadcast cancelled."
+broadcast_already_running: "هـنـاك إذاعـة قـيـد الـتـشـغـيـل بـالـفـعـل.\n\nيـرجـى الانـتـظـار حـتـى تـكـتـمـل أو إلـغـاؤهـا أولاً بـاسـتـخـدام:\n• <code>/broadcast -cancel</code>\n• أو انـقـر عـلـى زر الإلـغـاء فـي رسـالـة الـتـقـدم 🧡."
+broadcast_parse_failed: "فـشـل تـحـلـيـل أمـر الإذاعـة:\n<code>{error}</code> 🧡"
+broadcast_no_content: "لـم يـتـم تـوفـيـر مـحـتـوى لـلإذاعـة.\n\n<b>الاسـتـخـدام:</b> <code>{cmd} [نـص أو رد عـلـى رسـالـة]</code>\n\n<b>مـثـال:</b>\n<code>{cmd} مـرحـبـاً بـالـجـمـيـع!</code> 🤍"
+broadcast_fetch_chats_failed: "فـشـل جـلـب الـدردشـات الـمـخـدومـة:\n<code>{error}</code> 🧡"
+broadcast_fetch_users_failed: "فـشـل جـلـب الـمـسـتـخـدمـيـن الـمـخـدومـيـن:\n<code>{error}</code> 🧡"
+broadcast_no_targets: "لـم يـتـم الـعـثـور عـلـى أهـداف لـلإذاعـة.\n\nتـأكـد مـن أنـك لـم تـسـتـبـعـد جـمـيـع الأهـداف بـالـعـلامـات 💜."
+broadcast_initializing: "جـاري بـدء تـهـيـئـة الإذاعـة...\n\nيـرجـى الانـتـظـار... 🩵"
+broadcast_cancelled_header: "تـم إلـغـاء الإذاعـة 🧡"
+broadcast_completed_header: "اكـتـمـلـت الإذاعـة 💝"
+broadcast_progress_header: "جـاري الإذاعـة... ⚡"
+broadcast_total_chats: "إجـمـالـي الـدردشـات: {done}/{total} ({progress}%) 💜"
+broadcast_total_users: "إجـمـالـي الـمـسـتـخـدمـيـن: {done}/{total} ({progress}%) 💙"
+broadcast_failed_chats: "الـدردشـات الـفـاشـلـة: {count} 🧡"
+broadcast_failed_users: "الـمـسـتـخـدمـون الـفـاشـلـون: {count} 🧡"
+broadcast_delay: "الـتـأخـيـر: {delay} ثـانـيـة ⏱"
+broadcast_elapsed: "الـمـنـقـضـي: {elapsed} 🥀"
+broadcast_eta: "الـوقـت الـمـتـبـقـي: {eta} ⏳"
+broadcast_success_rate: "نـسـبـة الـنـجـاح: {rate}% ({sent}/{total}) ✨"
+broadcast_not_running: "لا تـوجـد إذاعـة قـيـد الـتـشـغـيـل حـالـيـاً 🤍."
+broadcast_cancel_success: "تـم إلـغـاء الإذاعـة بـنـجـاح 💝."
+broadcast_cancel_owner_only: "يـمـكـن لـلـمـالـك فـقـط إلـغـاء الإذاعـات 💜."
+broadcast_cancel_none_running: "لا تـوجـد إذاعـة قـيـد الـتـشـغـيـل حـالـيـاً 🤍."
+broadcast_cancel_done: "تـم إلـغـاء الإذاعـة 🧡."
 
 # 🎧 CPlay (Channel Play)
 
-cplay_id_not_set: "⚠️ cplay ID not set.\nUse <code>/cplay --set &lt;chat_id&gt;</code> to set it."
-cplay_usage: "<b>Usage:</b> <code>/cplay --set &lt;channel_id&gt;</code>"
-cplay_invalid_chat_id: "<b>Invalid Chat ID:</b> Please provide a valid integer ID for the channel."
-cplay_resolve_peer_fail: "<b>Failed to resolve peer:</b> Could not fetch channel details. Ensure I can access this channel."
-cplay_invalid_target: "<b>Invalid Target:</b> The provided ID is not a valid channel."
-cplay_channel_not_accessible: "<b>Channel Not Accessible:</b> Could not retrieve channel information. Please ensure I am an administrator in the target channel."
-cplay_save_error: "<b>Error:</b> Failed to save CPlay settings."
-cplay_enabled: "✅ <b>Channel Play enabled.</b> All <code>/c</code> commands will now work in channel <code>{channel_id}</code>."
+cplay_id_not_set: "لـم يـتـم تـعـيـيـن مـعـرف cplay.\nاسـتـخـدم <code>/cplay --set &lt;chat_id&gt;</code> لـتـعـيـيـنـه 💜."
+cplay_usage: "<b>الاسـتـخـدام:</b> <code>/cplay --set &lt;channel_id&gt;</code>"
+cplay_invalid_chat_id: "<b>مـعـرف دردشـة غـيـر صـالـح:</b> يـرجـى تـوفـيـر مـعـرف صـحـيـح لـلـقـنـاة 🧡."
+cplay_resolve_peer_fail: "<b>فـشـل حـل الـنـظـيـر:</b> لـم يـتـم جـلـب تـفـاصـيـل الـقـنـاة. تـأكـد مـن إمـكـانـيـة وصـولـي لـهـا 🧡."
+cplay_invalid_target: "<b>هـدف غـيـر صـالـح:</b> الـمـعـرف الـمـقـدم لـيـس قـنـاة صـالـحـة 🧡."
+cplay_channel_not_accessible: "<b>الـقـنـاة غـيـر مـتـاحـة:</b> تـعـذر جـلـب مـعـلـومـات الـقـنـاة. يـرجـى الـتـأكـد مـن أنـنـي مـشـرف فـي الـقـنـاة 💜."
+cplay_save_error: "<b>خـطـأ:</b> فـشـل حـفـظ إعـدادات CPlay 🧡."
+cplay_enabled: "<b>تـم تـفـعـيـل الـتـشـغـيـل فـي الـقـنـاة.</b> جـمـيـع أوامـر <code>/c</code> سـتـعـمـل الآن فـي الـقـنـاة <code>{channel_id}</code> 💝."
 
 # Callback handler messages
-invalid_request: "⚠️ Invalid request."
-unknown_action: "⚠️ Unknown action."
-download_cancelled: "✅ Download cancelled."
-no_download_to_cancel: "ℹ️ No download to cancel."
+invalid_request: "طـلـب غـيـر صـالـح 🧡."
+unknown_action: "إجـراء غـيـر مـعـروف 🧡."
+download_cancelled: "تـم إلـغـاء الـتـحـمـيـل 🤍."
+no_download_to_cancel: "لا يـوجـد تـحـمـيـل لإلـغـائـه 💜."
 
 # Pause callback
-cb_pause_success: "⏸️ Track paused at {position}"
+cb_pause_success: "⚡ تـم إيـقـاف الـمـقـطـع مـؤقـتـاً عـنـد {position}."
 cb_pause_message: |
-  <b>⏸️ Track Paused</b>
+  <b>⚡ تـم الإيـقـاف الـمـؤقـت</b>
 
-  <b>▫ Track:</b> <a href="{url}">{title}</a>
-  <b>▫ Position:</b> {position} / {duration}
-  <b>▫ Paused by:</b> {user}
+  <b>▫ الـمـقـطـع:</b> <a href="{url}">{title}</a>
+  <b>▫ الـمـوضـع:</b> {position} / {duration}
+  <b>▫ بـواسـطـة:</b> {user}
 
 # Resume callback
-cb_already_playing: "ℹ️ Track is already playing."
-cb_resume_failed: "❌ Failed to resume playback."
-cb_resume_success: "▶️ Resumed at {position}."
+cb_already_playing: "الـمـقـطـع يـعـمـل بـالـفـعـل 🤍."
+cb_resume_failed: "فـشـل اسـتـئـنـاف الـتـشـغـيـل 🧡."
+cb_resume_success: "🧚 تـم الاسـتـئـنـاف عـنـد {position}."
 cb_resume_message: |
-  <b>🎵 Now Playing:</b>
+  <b>🧚 يـعـمـل الآن:</b>
 
-  <b>▫ Track:</b> <a href="{url}">{title}</a>
-  <b>▫ Duration:</b> {duration}
-  <b>▫ Resumed by:</b> {user}
+  <b>▫ الـمـقـطـع:</b> <a href="{url}">{title}</a>
+  <b>▫ الـمـدة:</b> {duration}
+  <b>▫ تـم الاسـتـئـنـاف بـواسـطـة:</b> {user}
 
 # Replay callback
-cb_replaying: "🔁 <b>Replaying current track...</b>"
-cb_replay_failed: "❌ Failed to replay track."
-cb_replay_success: "🔁 Track replayed."
-cb_replay_edited: "🔁 Track replayed by {user}."
+cb_replaying: "💞 <b>جـاري إعـادة تـشـغـيـل الـمـقـطـع...</b>"
+cb_replay_failed: "فـشـل إعـادة تـشـغـيـل الـمـقـطـع 🧡."
+cb_replay_success: "💞 تـمـت إعـادة الـتـشـغـيـل."
+cb_replay_edited: "💞 تـمـت الإعـادة بـواسـطـة {user}."
 
 # Skip callback
-cb_skip_queue_empty: "⏹️ Playback stopped — queue empty."
-cb_skip_download_failed: "❌ Failed to download next track."
-cb_skip_play_failed: "❌ Failed to play next track."
-cb_skip_success: "⏭️ Track skipped."
-cb_skip_edited: "⏭️ Skipped by {user}"
+cb_skip_queue_empty: "⏹️ تـوقـف الـتـشـغـيـل — الـقـائـمـة فـارغـة."
+cb_skip_download_failed: "فـشـل تـحـمـيـل الـمـقـطـع الـتـالـي 🧡."
+cb_skip_play_failed: "فـشـل تـشـغـيـل الـمـقـطـع الـتـالـي 🧡."
+cb_skip_success: "🧚 تـم تـخـطـي الـمـقـطـع."
+cb_skip_edited: "🧚 تـم الـتـخـطـي بـواسـطـة {user}"
 
 # Stop callback
-cb_stop_success: "⏹️ Playback stopped."
+cb_stop_success: "⏹️ تـم إيـقـاف الـتـشـغـيـل."
 
 # Mute/Unmute callback
-cb_mute_success: "🔇 Muted."
+cb_mute_success: "💙 تـم الـكـتـم."
 cb_mute_message: |
-  <b>🔇 Playback Muted</b>
+  <b>💙 تـم كـتـم الـتـشـغـيـل</b>
 
-  <b>▫ Track:</b> <a href="{url}">{title}</a>
-  <b>▫ Muted by:</b> {user}
+  <b>▫ الـمـقـطـع:</b> <a href="{url}">{title}</a>
+  <b>▫ بـواسـطـة:</b> {user}
 
-cb_unmute_success: "🔊 Unmuted."
+cb_unmute_success: "💜 تـم إلـغـاء الـكـتـم."
 
-cb_seek_success: "⏩ Sought forward {seconds} seconds"
-cb_seek_near_end: "⚠️ Cannot seek forward {seconds} seconds — about to reach end."
-cb_seek_edited: "⏩ Sought {seconds} seconds — by {user}"
+cb_seek_success: "🧚 تـم الـتـقـديـم {seconds} ثـانـيـة"
+cb_seek_near_end: "لا يـمـكـن الـتـقـديـم {seconds} ثـانـيـة — الـمـقـطـع عـلـى وشـك الانـتـهـاء 🧡."
+cb_seek_edited: "🧚 تـم الـتـقـديـم {seconds} ثـانـيـة — بـواسـطـة {user}"
 
-cb_seekback_success: "⏪ Sought back {seconds} seconds"
-cb_seekback_edited: "⏪ Sought back {seconds} seconds — by {user}"
+cb_seekback_success: "🧚 تـم الإرجـاع {seconds} ثـانـيـة"
+cb_seekback_edited: "🧚 تـم الإرجـاع {seconds} ثـانـيـة — بـواسـطـة {user}"
 
 # 🗑️ Delete auth
-del_auth_not_authorized: "⚠️ That user isn’t authorized — nothing to remove."
-del_auth_remove_fail: "❌ Failed to remove authorized user: <code>{error}</code>"
-del_auth_success: "✅ Successfully removed {user} from the authorized users list."
+del_auth_not_authorized: "هـذا الـمـسـتـخـدم لـيـس مـعـتـمـداً — لا يـوجـد شـيء لإزالـتـه 🤍."
+del_auth_remove_fail: "فـشـلـت إزالـة الـمـسـتـخـدم الـمـعـتـمـد: <code>{error}</code> 🧡"
+del_auth_success: "تـمـت إزالـة {user} بـنـجـاح مـن قـائـمـة الـمـعـتـمـديـن 🧚."
 
 # 📜 Auth list
-authlist_fetch_fail: "❌ Failed to get authorized users list: <code>{error}</code>"
-authlist_empty: "ℹ️ There are no authorized users in this chat."
-authlist_fetching: "⏳ Fetching authorized users list..."
-authlist_header: "<b>Authorized Users:</b>"
-authlist_user_fail: "{index}. <code>{user_id}</code> (Could not fetch user info)"
+authlist_fetch_fail: "فـشـل جـلـب قـائـمـة الـمـعـتـمـديـن: <code>{error}</code> 🧡"
+authlist_empty: "لا يـوجـد مـسـتـخـدمـيـن مـعـتـمـديـن فـي هـذه الـدردشـة 🤍."
+authlist_fetching: "جـاري جـلـب قـائـمـة الـمـعـتـمـديـن... 🧚"
+authlist_header: "<b>الـمـسـتـخـدمـون الـمـعـتـمـدون:</b> 💝"
+authlist_user_fail: "{index}. <code>{user_id}</code> (تـعـذر جـلـب الـمـعـلـومـات)"
 authlist_user_entry: "{index}. {user} (<code>{user_id}</code>)"
-authlist_total: "<b>Total:</b> {count} users"
+authlist_total: "<b>الإجـمـالـي:</b> {count} مـسـتـخـدم"
 
-autoleave_fetch_fail: "⚠️ <b>Failed to fetch AutoLeave state.</b>"
-autoleave_status: "🏃‍♂️ <b>AutoLeave Control</b>\n\nWhen enabled, the assistant will automatically leave the chat.\nUsage: {cmd} [enable|disable]\nCurrent state: {action}"
-autoleave_already: "⚠️ AutoLeave is already {action}"
-autoleave_update_fail: "⚠️ <b>Failed to update AutoLeave state.</b>"
-autoleave_updated: "🏃‍♂️ AutoLeave has been {action}"
+autoleave_fetch_fail: "<b>فـشـل جـلـب حـالـة الـمـغـادرة الـتـلـقـائـيـة.</b> 🧡"
+autoleave_status: "<b>الـمـغـادرة الـتـلـقـائـيـة</b> 🧚\n\nعـنـد الـتـفـعـيـل، سـيـغـادر الـمـسـاعـد الـدردشـة تـلـقـائـيـاً.\nالاسـتـخـدم: {cmd} [تفعيل|تعطيل]\nالـحـالـة الـحـالـيـة: {action}"
+autoleave_already: "الـمـغـادرة الـتـلـقـائـيـة بـالـفـعـل {action} 🤍"
+autoleave_update_fail: "<b>فـشـل تـحـديـث حـالـة الـمـغـادرة الـتـلـقـائـيـة.</b> 🧡"
+autoleave_updated: "تـم {action} الـمـغـادرة الـتـلـقـائـيـة 💝."
 
-enabled: "Enabled"
-disabled: "Disabled"
+enabled: "مـفـعـل"
+disabled: "مـعـطـل"
 
-bug_usasge: "⚠️ Please describe the bug. Usage: {cmd} <problem> or reply to a message."
-bug_thanks: "✅ Thank you for your bug report! It has been sent to the developers."
+bug_usasge: "يـرجـى وصـف الـخـطـأ. الاسـتـخـدم: {cmd} <الـمـشـكـلـة> أو رد عـلـى رسـالـة 🤍."
+bug_thanks: "شـكـراً لـتـبـلـيـغـك عـن الـخـطـأ! تـم إرسـالـه لـلـمـطـوريـن 💝."
 
 bug_report_format: |
-  <b>🐞 New Bug Report</b>
+  <b>🐞 تـقـريـر خـطـأ جـديـد</b>
 
-  <b>From:</b> {user} (<code>{user_id}</code>)
-  <b>Chat:</b> {chat} (<code>{chat_id}</code>)
+  <b>مـن:</b> {user} (<code>{user_id}</code>)
+  <b>الـدردشـة:</b> {chat} (<code>{chat_id}</code>)
 
-  <b>Report:</b>
+  <b>الـتـقـريـر:</b>
   <pre>{report}</pre>
   
-clear_no_active: "⚠️ <b>No active playback or queue to clear.</b>"
-clear_success: "✅ The queue has been cleared by {user}."
+clear_no_active: "<b>لا يـوجـد تـشـغـيـل نـشـط أو قـائـمـة لـمـسـحـهـا.</b> 🤍"
+clear_success: "تـم مـسـح الـقـائـمـة بـواسـطـة {user} 💝."
 
 err_assistant_banned: |
-  <b>🚫 Assistant Restricted</b>
+  <b>الـمـسـاعـد مـحـظـور</b> 🧡
 
-  I can't play music because {user} (UserID: <code>{id}</code>) is <b>banned</b> or <b>removed</b> from this chat.
+  لا يـمـكـنـنـي الـتـشـغـيـل لأن {user} (UserID: <code>{id}</code>) <b>مـحـظـور</b> أو <b>مـطـرود</b> مـن الـدردشـة.
 
-  <i>✅ Unbanned them already? Use /reload to refresh.</i>
+  <i> هـل تـم فـك الـحـظـر؟ اسـتـخـدم /reload لـلـتـحـديـث.</i>
 
 err_admin_permission_required: |
-  ⚠️ <b>Admin Permission Required</b>
+  <b>مـطـلـوب صـلاحـيـة مـشـرف</b> 🧡
 
-  I need <i>admin access</i> to manage and check members in this chat.
+  أحـتـاج <i>صـلاحـيـة الـمـشـرف</i> لإدارة وفـحـص الأعـضـاء هـنـا.
   
-  ➤ <b>Promote me with</b> <code>Manage Chat / Invite Users</code> permission.
+  ➤ <b>رقـنـي بـصـلاحـيـة</b> <code>إدارة الـدردشـة / دعـوة الـمـسـتـخـدمـيـن</code>.
 
 err_assistant_get_failed: |
-  ⚠️ The system could not assign an assistant to this chat.
+  تـعـذر عـلـى الـنـظـام تـعـيـيـن مـسـاعـد لـهـذه الـدردشـة 🧡.
 
-  <i>This is usually a temporary issue and should resolve by trying again.</i>
+  <i>عـادةً مـا تـكـون هـذه مـشـكـلـة مـؤقـتـة وتـحـل بـالـمـحـاولـة مـرة أخـرى.</i>
 
-  <b>➡️ Please retry your command.</b>
+  <b>🥀 يـرجـى إعـادة الـمـحـاولـة.</b>
 
-  <i>If this keeps happening, please contact support so we can assist you.</i>
+  <i>إذا اسـتـمـر هـذا، يـرجـى الـتـواصـل مـع الـدعـم.</i>
   
 err_assistant_join_rate_limited: |
-  ⚠️ Assistant cannot join this chat because it has reached the maximum number of allowed groups.
+  لا يـمـكـن لـلـمـسـاعـد الانـضـمـام لأنـه وصـل لـلـحـد الأقـصـى مـن الـمـجـمـوعـات 🧡.
 
 err_assistant_join_request_sent: |
-  ⚠️ Assistant sent a join request, but I could not auto-approve it.
+  أرسـل الـمـسـاعـد طـلـب انـضـمـام، لـكـن لـم أتـمـكـن مـن الـمـوافـقـة الـتـلـقـائـيـة 🤍.
 
-  <i>✅ Please approve the request manually, then try again.</i>
+  <i> يـرجـى قـبـول الـطـلـب يـدويـاً ثـم الـمـحـاولـة.</i>
 
 err_assistant_invite_link_fetch: |
-  ⚠️ Failed to fetch invite link:
-  <i>{error}</i>
+  فـشـل جـلـب رابـط الـدعـوة:
+  <i>{error}</i> 🧡
 
 err_assistant_invite_failed: |
-  ⚠️ Assistant failed to join this chat:
-  <i>{error}</i>
+  فـشـل انـضـمـام الـمـسـاعـد لـلـدردشـة:
+  <i>{error}</i> 🧡
 
 err_no_active_voicechat: |
-  🎙️ <b>No Active Voice Chat</b>
+  🤍 <b>لا تـوجـد مـحـادثـة صـوتـيـة نـشـطـة</b>
 
-  I can't join — please start a voice chat first.
+  لا يـمـكـنـنـي الانـضـمـام — يـرجـى بـدء مـحـادثـة صـوتـيـة أولاً.
 
-  <i>Already started one? Use /reload to refresh.</i>
+  <i>بـدأت واحـدة؟ اسـتـخـدم /reload لـلـتـحـديـث.</i>
 
 err_fetch_failed: |
-  ⚠️ Failed to fetch chat info:
-  <i>{error}</i>
+  فـشـل جـلـب مـعـلـومـات الـدردشـة:
+  <i>{error}</i> 🧡
 
 err_peer_resolve_failed: |
-  ⚠️ Failed to resolve peer information. Try again later or re-add the assistant.
+  فـشـل حـل مـعـلـومـات الـنـظـيـر. حـاول لاحـقـاً أو أعـد إضـافـة الـمـسـاعـد 💜.
 
 err_rtmp_missing_params: |
-  <b>⚠️ RTMP Details Missing</b>
+  <b>تـفـاصـيـل RTMP مـفـقـودة</b> 🧡
 
-  <i>It looks like an <b>RTMP stream</b> is active in this chat, but you have not provided the required
-  <b>RTMP URL</b> or <b>Stream Key</b>. Without these, I cannot start streaming music to RTMP.</i>
+  <i>يـبـدو أن هـنـاك <b>بـث RTMP</b> نـشـط، لـكـنـك لـم تـوفـر
+  <b>رابـط RTMP</b> أو <b>مـفـتـاح الـبـث</b>. بـدونـهـمـا لا يـمـكـنـنـي الـبـث.</i>
 
-  <b>Use:</b> <code>/setrtmp [chat_id] [url+key]</code>
+  <b>اسـتـخـدم:</b> <code>/setrtmp [chat_id] [url+key]</code>
 
-  <i>📌 Once the RTMP details are set, you may start streaming.</i>  
-  <i>➡️ If you do not wish to use RTMP, switch to regular voice chat instead.</i>
+  <i>🩵 بـمـجـرد ضـبـط الـتـفـاصـيـل، يـمـكـنـك بـدء الـبـث.</i>  
+  <i>🤍 إذا كـنـت لا تـريـد RTMP، حـول لـلـمـحـادثـة الـصـوتـيـة الـعـاديـة.</i>
   
 err_unknown: |
-  ⚠️ Unknown Error Occurred:
-  <i>{error}</i>
+  حـدث خـطـأ غـيـر مـعـروف:
+  <i>{error}</i> 🧡
 
 err_fetch_tracks: |
-  ⚠️ <b>Failed to fetch track details.</b>
-  Please try again later.
+  <b>فـشـل جـلـب تـفـاصـيـل الـمـقـطـع.</b>
+  يـرجـى الـمـحـاولـة لاحـقـاً 💜.
 
 err_download_internal: |
-  ⚠️ <b>Download failed</b> due to an unexpected internal error.
-  Please try again later.
+  <b>فـشـل الـتـحـمـيـل</b> بـسـبـب خـطـأ داخـلـي.
+  يـرجـى الـمـحـاولـة لاحـقـاً 🧡.
   
-flood_seconds: "⏳ Slow down! Try again in {duration} seconds."
-flood_minutes: "⏳ Please wait {duration} minutes before using this command again."
+flood_seconds: "تـمـهـل! حـاول مـجـدداً بـعـد {duration} ثـانـيـة 🤍."
+flood_minutes: "يـرجـى الانـتـظـار {duration} دقـيـقـة قـبـل اسـتـخـدام الأمـر مـرة أخـرى ⏳."
 
-help_private_only: "🤖 Hi! For bot help and commands, please DM me directly — I'm more responsive in private chats!"
-help_main: "📚 <b>Help Menu</b>\n\nSelect a category below to explore detailed commands and their usage for managing, controlling, and customizing the bot."
+help_private_only: "مـرحـبـاً! لـلـمـسـاعـدة والأوامـر، راسـلـنـي فـي الـخـاص — أنـا أسـرع هـنـاك! 🧚"
+help_main: "🤍 <b>قـائـمـة الـمـسـاعـدة</b>\n\nاخـتـر فـئـة أد نـاه لاسـتـكـشـاف الأوامـر الـتـفـصـيـلـيـة وطـريـقـة اسـتـخـدامـهـا لـلـتـحـكـم فـي الـبـوت 🩵."
 
-jump_no_active: "⚠️ <b>No active track to jump within.</b>"
-jump_usage: "⚠️ Please provide seconds.\nExample: <code>{cmd} 120</code>"
-jump_invalid_position: "⚠️ Invalid position.\nExample: <code>{cmd} 120</code>"
-jump_too_close_end: "⚠️ Cannot jump to <b>{position}</b> — that’s too close to the end of the track."
-jump_failed: "❌ Failed to jump to <b>{position}</b>.\nError: <code>{error}</code>"
-jump_success: "⏩ Jumped to <u>{position}</u> of <u>{duration}</u>."
+jump_no_active: "<b>لا يـوجـد مـقـطـع نـشـط لـلـقـفـز فـيـه.</b> 🧡"
+jump_usage: "يـرجـى كـتـابـة الـثـوانـي.\nمـثـال: <code>{cmd} 120</code> 🤍"
+jump_invalid_position: "مـوضـع غـيـر صـالـح.\nمـثـال: <code>{cmd} 120</code> 🧡"
+jump_too_close_end: "لا يـمـكـن الـقـفـز إلـى <b>{position}</b> — قـريـب جـداً مـن الـنـهـايـة 💜."
+jump_failed: "فـشـل الـقـفـز إلـى <b>{position}</b>.\nالـخـطـأ: <code>{error}</code> 🧡"
+jump_success: "🧚 تـم الـقـفـز إلـى <u>{position}</u> مـن <u>{duration}</u> 💝."
 
-lang_same: "ℹ️ You’re already using this language."
-lang_select: "🌐 Select your preferred language:"
-lang_fail: "❌ Failed to update language. Please try again later."
-lang_success: "✅ Language successfully updated to {lang_name}."
+lang_same: "أنـت تـسـتـخـدم هـذه الـلـغـة بـالـفـعـل 🤍."
+lang_select: "اخـتـر لـغـتـك الـمـفـضـلـة: 🥀"
+lang_fail: "فـشـل تـحـديـث الـلـغـة. حـاول لاحـقـاً 🧡."
+lang_success: "تـم تـحـديـث الـلـغـة بـنـجـاح إلـى {lang_name} 💝."
 
-logger_playback_started: "Playback Started"
-logger_playback_queued: "Playback Queued"
+logger_playback_started: "بـدأ الـتـشـغـيـل 🤍"
+logger_playback_queued: "تـمـت الإضـافـة لـلـقـائـمـة 🤍"
 
 logger_bot_added: |
-  🤖 <b>Bot Added to New Group</b>
+  <b>تـمـت إضـافـة الـبـوت لـمـجـمـوعـة</b> 🧚
   
   <blockquote>
-  <b>Group Name:</b> {group_name}
-  <b>Group ID:</b> {group_id}
-  <b>Group Username:</b> {group_username}
+  <b>اسـم الـمـجـمـوعـة:</b> {group_name}
+  <b>الآيـدي:</b> {group_id}
+  <b>الـمـعـرف:</b> {group_username}
 
-  <b>Added By:</b> {added_by_name}
-  <b>User ID:</b> {added_by_id}
-  <b>User Username:</b> {added_by_username}
+  <b>بـواسـطـة:</b> {added_by_name}
+  <b>الآيـدي:</b> {added_by_id}
+  <b>الـمـعـرف:</b> {added_by_username}
 
-  <b>Time:</b> {date_time}
+  <b>الـوقـت:</b> {date_time}
   </blockquote>
-#  👥 <b>Members Count:</b> {members_count}
 
 logger_bot_removed: |
 
-  🤖 <b>Bot Removed from Group</b>
+  <b>تـمـت إزالـة الـبـوت مـن مـجـمـوعـة</b> 🧚
   <blockquote>
-  <b>Group Name:</b> {group_name}
-  <b>Group ID:</b> {group_id}
-  <b>Group Username:</b> {group_username}
+  <b>اسـم الـمـجـمـوعـة:</b> {group_name}
+  <b>الآيـدي:</b> {group_id}
+  <b>الـمـعـرف:</b> {group_username}
 
-  <b>Removed By:</b> {removed_by_name}
-  <b>User ID:</b> {removed_by_id}
-  <b>User Username:</b> {removed_by_username}
+  <b>بـواسـطـة:</b> {removed_by_name}
+  <b>الآيـدي:</b> {removed_by_id}
+  <b>الـمـعـرف:</b> {removed_by_username}
 
-  <b>Time:</b> {date_time}
+  <b>الـوقـت:</b> {date_time}
   </blockquote>
   
 logger_bot_started: |
-  ▶️ <b>{mention} started the bot</b>
+  🧚 <b>{mention} قـام بـبـدء الـبـوت</b>
 
-  <b>Username:</b> {user_username}
-  <b>ID:</b> {user_id}
+  <b>الـمـعـرف:</b> {user_username}
+  <b>الآيـدي:</b> {user_id}
   
-logger_track: "🎧 Track:"
-logger_source: "🔗 Source:"
-logger_group: "📌 Group:"
-logger_requested_by: "👤 Requested by:"
-logger_timestamp: "⏳ Timestamp:"
+logger_track: "🧚 الـمـقـطـع:"
+logger_source: "🤎 الـمـصـدر:"
+logger_group: "🤍 الـمـجـمـوعـة:"
+logger_requested_by: "🥀 طـلـب بـواسـطـة:"
+logger_timestamp: "⚡ الـوقـت:"
 
-loop_usage: "🔁 <b>Loop Control</b>\n\nUsage: {cmd} [count]\n• 0 - Disable loop\n• 1-10 - Loop count\n\n<i>{count_line}</i>"
-loop_invalid: "⚠️ <b>Invalid loop count.</b>\nUse 0 to disable or 1-10 to set loop count."
-loop_already_set: "⚠️ Loop count is already set to <b>{count}</b> time(s)."
-loop_disabled: "🔁 Loop has been <b>disabled</b> by {user}"
-loop_set: "🔁 Set to loop <b>{count}</b> time(s)\n└ Changed by: {user}"
-loop_current: "• Current loop: <b>{count}</b> time(s)"
+loop_usage: "💞 <b>الـتـحـكـم فـي الـتـكـرار</b>\n\nالاسـتـخـدام: {cmd} [العدد]\n• 0 - لـلـتـعـطـيـل\n• 1-10 - عـدد الـمـرات\n\n<i>{count_line}</i>"
+loop_invalid: "<b>عـدد الـتـكـرار غـيـر صـالـح.</b>\nاسـتـخـدم 0 لـلـتـعـطـيـل أو 1-10 لـلـتـعـيـيـن 🧡."
+loop_already_set: "الـتـكـرار مـضـبـوط بـالـفـعـل عـلـى <b>{count}</b> مـرات 🤍."
+loop_disabled: "تـم <b>تـعـطـيـل</b> الـتـكـرار بـواسـطـة {user} 💞"
+loop_set: "💞 تـم الـضـبـط لـلـتـكـرار <b>{count}</b> مـرات\n└ بـواسـطـة: {user}"
+loop_current: "• الـتـكـرار الـحـالـي: <b>{count}</b> مـرات"
 
-logger_usage: "⚙️ Usage: <code>{cmd} [enable|disable]</code> - To enable or disable the logger\n\n{status}"
-logger_status: "📜 Current status: {action}"
-logger_check_fail: "❌ Failed to check logger status: {error}"
-logger_already: "ℹ️ Logger is already {action}."
-logger_update_fail: "❌ Failed to update logger setting: {error}"
-logger_updated: "✅ Logger has been {action} successfully."
+logger_usage: "💞 الاسـتـخـدام: <code>{cmd} [تفعيل|تعطيل]</code> - لـلـتـحـكـم فـي الـسـجـل\n\n{status}"
+logger_status: "⚡ الـحـالـة الـحـالـيـة: {action}"
+logger_check_fail: "فـشـل الـتـحـقـق مـن حـالـة الـسـجـل: {error} 🧡"
+logger_already: "الـسـجـل بـالـفـعـل {action} 🤍."
+logger_update_fail: "فـشـل تـحـديـث إعـدادات الـسـجـل: {error} 🧡"
+logger_updated: "تـم {action} الـسـجـل بـنـجـاح 💝."
 
 # Logs module
-logs_invalid_number: "⚠️ <b>Invalid Number</b>\n\nThe value <code>{value}</code> is not a valid positive number.\n\n<b>Usage:</b> <code>/logs [number]</code> or <code>/logs -old [number]</code>"
-logs_invalid_flag: "⚠️ <b>Invalid Flag</b>\n\nUnknown flag or invalid input: <code>{flag}</code>\n\n<b>Valid options:</b>\n• <code>/logs</code> - Full log\n• <code>/logs [n]</code> - Last N lines\n• <code>/logs -old [n]</code> - Oldest log\n• <code>/logs -clear</code> - Clear logs"
-logs_file_error: "❌ <b>Log File Error</b>\n\nAn error occurred while accessing the log file:\n<code>{error}</code>"
-logs_send_error: "❌ <b>Log Send Failed</b>\n\nUnable to prepare or send the log file.\n<code>{error}</code>"
-logs_clear_failed: "❌ <b>Clear Failed</b>\n\nFailed to clear log file:\n<code>{error}</code>"
-logs_empty: "📭 <b>No Logs Available</b>\n\nThe log file either doesn’t exist yet or exists but contains no data.\n\nRun the bot for a while to generate logs."
-logs_preview_header: "📋 <b>Current Log Preview:</b>"
-logs_lines_header: "📋 <b>Recent Log Lines</b> (Last {count})"
-logs_old_header: "📋 <b>Oldest Log Lines</b> (First {count})"
-logs_uploading: "⏳ <b>Uploading log file...</b>\n\nPlease wait while the file is being prepared."
-logs_file_caption: "📄 <b>Log File Details</b>\n\n<b>Filename:</b> <code>{filename}</code>\n<b>Size:</b> {size_mb} MB\n<b>Last Modified:</b> {modified}"
-logs_lines_caption: "📋 <b>Recent Log Lines</b>\n\nShowing last {count} lines from current log."
-logs_old_caption: "📋 <b>Oldest Log Lines</b>\n\nShowing first {count} lines from the beginning of the log."
-logs_cleared: "✅ <b>Log File Cleared</b>\n\nSuccessfully cleared the log file.\n<b>Previous Size:</b> {size_mb} MB"
+logs_invalid_number: "<b>رقـم غـيـر صـالـح</b> 🧡\n\nالـقـيـمـة <code>{value}</code> لـيـسـت رقـمـاً صـحـيـحـاً.\n\n<b>الاسـتـخـدام:</b> <code>/logs [العدد]</code>"
+logs_invalid_flag: "<b>عـلامـة غـيـر صـالـحـة</b> 🧡\n\nإد خـال غـيـر مـعـروف: <code>{flag}</code>\n\n<b>الـخـيـارات:</b>\n• <code>/logs</code> - سـجـل كـامـل\n• <code>/logs [n]</code> - آخـر n سـطـور\n• <code>/logs -old [n]</code> - أقـدم سـطـور\n• <code>/logs -clear</code> - مـسـح الـسـجـل"
+logs_file_error: "<b>خـطـأ فـي مـلـف الـسـجـل</b> 🧡\n\nحـدث خـطـأ أثـنـاء الـوصـول لـلـمـلـف:\n<code>{error}</code>"
+logs_send_error: "<b>فـشـل إرسـال الـسـجـل</b> 🧡\n\nغـيـر قـادر عـلـى تـجـهـيـز أو إرسـال الـمـلـف.\n<code>{error}</code>"
+logs_clear_failed: "<b>فـشـل الـمـسـح</b> 🧡\n\nلـم نـتـمـكـن مـن مـسـح الـسـجـل:\n<code>{error}</code>"
+logs_empty: "<b>لا تـوجـد سـجـلات</b> ⭐\n\nالـمـلـف إمـا غـيـر مـوجـود أو فـارغ.\n\nشـغـل الـبـوت لـبـعـض الـوقـت لـتـولـيـد بـيـانـات."
+logs_preview_header: "🩵 <b>مـعـايـنـة الـسـجـل الـحـالـي:</b>"
+logs_lines_header: "🤎 <b>أسـطـر الـسـجـل الـحـديـثـة</b> (آخـر {count})"
+logs_old_header: "🤍 <b>أسـطـر الـسـجـل الـقـديـمـة</b> (أول {count})"
+logs_uploading: "<b>جـاري رفـع الـمـلـف...</b> 💚\n\nيـرجـى الانـتـظـار."
+logs_file_caption: "🧡 <b>تـفـاصـيـل مـلـف الـسـجـل</b>\n\n<b>اسـم الـمـلـف:</b> <code>{filename}</code>\n<b>الـحـجـم:</b> {size_mb} MB\n<b>آخـر تـعـديـل:</b> {modified}"
+logs_lines_caption: "💙 <b>أسـطـر الـسـجـل الـحـديـثـة</b>\n\nعـرض آخـر {count} سـطـر."
+logs_old_caption: "⚡ <b>أسـطـر الـسـجـل الـقـديـمـة</b>\n\nعـرض أول {count} سـطـر مـن الـبـدايـة."
+logs_cleared: "<b>تـم مـسـح الـسـجـل</b> 💝\n\nتـم تـنـظـيـف الـمـلـف بـنـجـاح.\n<b>الـحـجـم الـسـابـق:</b> {size_mb} MB"
 
 # reason - if maintenance reason available so at the place of {reason} the maint_reason will provided
-maint: "⚠️ I'm under maintenance at the moment and temporarily unavailable. Please check back later.\n\n{reason}"
-maint_reason: "<i>📝 Reason: {reason}</i>"
+maint: "أنـا تـحـت الـصـيـانـة حـالـيـاً وغـيـر مـتـاح مـؤقـتـاً. يـرجـى الـمـحـاولـة لاحـقـاً 🧡.\n\n{reason}"
+maint_reason: "<i>🤍 الـسـبـب: {reason}</i>"
 
 # ⚙️ Maintenance control
-maint_usage: "⚙️ <b>Maintenance Control</b>\n\nUsage: {cmd} [enable|disable] [reason]\n📜 Current status: {status}"
-maint_check_fail: "❌ Failed to check maintenance status: <code>{error}</code>"
-maint_already_enabled: "ℹ️ Maintenance mode is already enabled 🟢."
-maint_already_disabled: "ℹ️ Maintenance mode is already disabled 🔴."
-maint_already_reason_same: "ℹ️ Maintenance is already enabled with the same reason."
-maint_reason_removed: "✅ Maintenance reason removed successfully."
-maint_reason_updated: "✅ Maintenance reason updated.\n📝 Reason: {reason}"
-maint_enabled: "✅ Maintenance mode has been <b>enabled</b> successfully."
-maint_enabled_reason: "✅ Maintenance mode enabled.\n📝 Reason: {reason}"
-maint_disabled: "✅ Maintenance mode has been <b>disabled</b> successfully."
-maint_entering: "⚠️ Bot is entering maintenance mode..."
-enabled_with_reason: "🟢 Enabled\n📝 Reason: {reason}"
+maint_usage: "💞 <b>الـتـحـكـم فـي الـصـيـانـة</b>\n\nالاسـتـخـدام: {cmd} [تفعيل|تعطيل] [السبب]\n🧚 الـحـالـة: {status}"
+maint_check_fail: "فـشـل الـتـحـقـق مـن الـصـيـانـة: <code>{error}</code> 🧡"
+maint_already_enabled: "وضـع الـصـيـانـة مـفـعـل بـالـفـعـل 🧚."
+maint_already_disabled: "وضـع الـصـيـانـة مـعـطـل بـالـفـعـل 💜."
+maint_already_reason_same: "الـصـيـانـة مـفـعـلـة بـنـفـس الـسـبـب 🤍."
+maint_reason_removed: "تـمـت إزالـة سـبـب الـصـيـانـة بـنـجـاح 💝."
+maint_reason_updated: "تـم تـحـديـث الـسـبـب بـنـجـاح 💝.\n🤍 الـسـبـب: {reason}"
+maint_enabled: "تـم <b>تـفـعـيـل</b> وضـع الـصـيـانـة بـنـجـاح 💝."
+maint_enabled_reason: "تـم تـفـعـيـل وضـع الـصـيـانـة.\n🤍 الـسـبـب: {reason} 💝"
+maint_disabled: "تـم <b>تـعـطـيـل</b> وضـع الـصـيـانـة بـنـجـاح 💝."
+maint_entering: "الـبـوت يـدخـل وضـع الـصـيـانـة... 🧡"
+enabled_with_reason: "🧚 مـفـعـل\n🤍 الـسـبـب: {reason}"
 
-move_usage: "⚠️ Usage: <code>{cmd} [from] [to]</code>"
-move_invalid_numbers: "⚠️ Invalid numbers. Example: <code>/{cmd} 2 1</code>"
-move_invalid_indexes_min: "⚠️ Indexes must be greater than 0."
-move_invalid_indexes_max: "⚠️ Queue has only {queue_len} tracks."
-move_success: "✅ Moved track from position {from} to {to} by {user}."
+move_usage: "الاسـتـخـدام: <code>{cmd} [مـن] [إلـى]</code> 🤍"
+move_invalid_numbers: "أرقـام غـيـر صـحـيـحـة. مـثـال: <code>/{cmd} 2 1</code> 🧡"
+move_invalid_indexes_min: "يـجـب أن تـكـون الأرقـام أكـبـر مـن 0 🧡."
+move_invalid_indexes_max: "الـقـائـمـة بـهـا {queue_len} مـقـطـع فـقـط 🧡."
+move_success: "تـم نـقـل الـمـقـطـع مـن {from} إلـى {to} بـواسـطـة {user} 💝."
 
 # 🔇 Mute messages
-mute_already_muted: "🔇 <b>Already Muted</b>\nThe music is already muted in this chat.\nWould you like to unmute it?"
-mute_already_muted_with_time: "🔇 <b>Already Muted</b>\nThe music is muted.\nAuto-unmute in <b>{duration}</b>."
-mute_invalid_duration: "⚠️ Invalid duration for auto-unmute.\nIt must be between <b>5</b> and <b>3600</b> seconds."
-mute_invalid_format: "⚠️ Invalid format.\nUse: <code>/{cmd} 30</code> or <code>/{cmd} 30s</code>"
-mute_failed: "❌ <b>Playback Mute Failed</b>\nError: <code>{error}</code>"
+mute_already_muted: "<b>مـكـتـوم بـالـفـعـل</b> 💙\nالـصـوت مـكـتـوم حـالـيـاً.\nهـل تـريـد إلـغـاء الـكـتـم؟"
+mute_already_muted_with_time: "<b>مـكـتـوم بـالـفـعـل</b> 💙\nسـيـتـم إلـغـاء الـكـتـم بـعـد <b>{duration}</b>."
+mute_invalid_duration: "مـدة غـيـر صـالـحـة.\nيـجـب أن تـكـون بـيـن <b>5</b> و <b>3600</b> ثـانـيـة 🧡."
+mute_invalid_format: "تـنـسـيـق غـيـر صـالـح 🧡.\nاسـتـخـدم: <code>/{cmd} 30</code>"
+mute_failed: "<b>فـشـل كـتـم الـصـوت</b> 🧡\nالـخـطـأ: <code>{error}</code>"
 mute_success: |
-  🔇 <b>Muted playback</b>
+  <b>تـم كـتـم الـتـشـغـيـل</b> 💙
 
-  🎵 Track: {title}
-  👤 Muted by: {user}
+  🧚 الـمـقـطـع: {title}
+  💫 بـواسـطـة: {user}
 
 mute_success_with_time: |
-  🔇 <b>Muted playback</b>
+  <b>تـم كـتـم الـتـشـغـيـل</b> 💙
 
-  🎵 Track: {title}
-  👤 Muted by: {user}
-  <i>⏳ Auto-unmute in <b>{duration}</b> seconds</i>
+  🧚 الـمـقـطـع: {title}
+  💫 بـواسـطـة: {user}
+  <i>⏳ إلـغـاء تـلـقـائـي بـعـد <b>{duration}</b> ثـانـيـة</i>
 
 no_song_query: |
-  🎵 <b>Whoops! No song detected.</b>
-  Type <b>{cmd}</b> <i>song name</i> or reply to a <i>media</i> to start playing!
+  <b>عـذراً! لـم يـتـم اكـتـشـاف أغـنـيـة.</b> 🧡
+  اكـتـب <b>{cmd}</b> <i>اسـم الأغـنـيـة</i> أو رد عـلـى <i>مـلـف صـوتـي</i> لـلـتـشـغـيـل!
 
-no_song_found: "❌ No tracks found."
-only_admin: "⚠️ <b>Permission Denied!</b>\nOnly <b>admins</b> can control this actions. You can still play songs 🎵.\n\nIf you believe you are an admin, please use /reload to refresh your admin status."
-only_admin_or_auth: "⚠️ <b>Access Denied</b>\nOnly <b>admins</b> or <b>authorized users</b> can control this actions.\n\nIf you recently became an admin, use /reload to refresh your permissions."
-only_admin_or_auth_cb: "⚠️ Only admins can do this actions."
-only_supergroup: "⚠️ This command can only be used in groups."
-only_owner: "⚠️ Only the bot owner can use this command."
-only_sudo: "⚠️ Only sudo users or the bot owner can use this command."
+no_song_found: "لـم يـتـم الـعـثـور عـلـى مـقـاطـع 🧡."
+only_admin: "<b>تـم رفـض الـوصـول!</b> 🧡\nفـقـط <b>الـمـشـرفـيـن</b> يـمـكـنـهـم ذلـك.\n\nإذا كـنـت مـشـرفـاً، اسـتـخـدم /reload لـلـتـحـديـث."
+only_admin_or_auth: "<b>تـم رفـض الـوصـول</b> 🧡\nفـقـط <b>الـمـشـرفـيـن</b> أو <b>الـمـعـتـمـديـن</b> يـمـكـنـهـم ذلـك."
+only_admin_or_auth_cb: "فـقـط الـمـشـرفـيـن يـمـكـنـهـم فـعـل ذلـك 🧡."
+only_supergroup: "هـذا الأمـر يـعـمـل فـي الـمـجـمـوعـات فـقـط 💜."
+only_owner: "فـقـط مـالـك الـبـوت يـمـكـنـه اسـتـخـدام هـذا الأمـر 💜."
+only_sudo: "فـقـط الـمـطـوريـن أو الـمـالـك يـمـكـنـهـم ذلـك ⚡."
 
-pause_invalid_duration: "⚠️ Invalid duration for auto-resume.\nIt must be between <b>5</b> and <b>3600</b> seconds."
-pause_invalid_format: "⚠️ Invalid format.\nUse: <code>/{cmd} 30</code> or <code>/{cmd} 30s</code>"
-auto_resume_line: "\n<i>⏳ Auto-resume in <b>{seconds}</b> seconds</i>"
+pause_invalid_duration: "مـدة غـيـر صـالـحـة.\nيـجـب أن تـكـون بـيـن <b>5</b> و <b>3600</b> ثـانـيـة 🧡."
+pause_invalid_format: "تـنـسـيـق خـاطـئ 🧡.\nاسـتـخـدم: <code>/{cmd} 30</code>"
+auto_resume_line: "\n<i>💫 اسـتـئـنـاف تـلـقـائـي بـعـد <b>{seconds}</b> ثـانـيـة</i>"
 
 pause_already: |
-  ⏸️ <b>Already Paused</b>
-  The music is already paused.{auto_resume_line}
+  <b>مـتـوقـف بـالـفـعـل</b> ⚡
+  الـمـوسـيـقـى مـتـوقـفـة مـؤقـتـاً.{auto_resume_line}
 
 pause_success: |
-  ⏸️ <b>Paused playback</b>
+  <b>تـم الإيـقـاف الـمـؤقـت</b> ⚡
 
-  🎵 Track: {title}
-  ⏱️ Position: {position} / {duration}
-  👤 Paused by: {user}
+  🧚 الـمـقـطـع: {title}
+  🩵 الـمـوضـع: {position} / {duration}
+  ⭐ بـواسـطـة: {user}
   {auto_resume_line}
 
 play_single_track_too_long: |
-  ⚠️ You can't play songs longer than {limit_mins} minutes.
-  <i>{title}</i> was skipped.
+  لا يـمـكـن تـشـغـيـل أغـانـي أطـول مـن {limit_mins} دقـيـقـة 🧡.
+  تـم تـخـطـي <i>{title}</i>.
 
 play_download_failed: |
-  ❌ Failed to download "<i>{title}</i>".
-  Error: <code>{error}</code>
+  فـشـل تـحـمـيـل "<i>{title}</i>". 🧡
+  الـخـطـأ: <code>{error}</code>
 
 play_added_to_queue_single: |
-  <b>🎵 Added to Queue:</b>
+  <b>تـمـت الإضـافـة لـلـقـائـمـة:</b> 🧚
 
-  <b>▫ Track:</b> <a href="{url}">{title}</a>
-  <b>▫ Duration:</b> {duration}
-  <b>▫ Requested by:</b> {by}
+  <b>▫ الـمـقـطـع:</b> <a href="{url}">{title}</a>
+  <b>▫ الـمـدة:</b> {duration}
+  <b>▫ طـلـب بـواسـطـة:</b> {by}
 
-channel_play_depreciated: "⚠️ This handler is deprecated. Use <code><a>/cplay --set channel_id </code></a> to set your channel for playback."
-play_multiple_tracks_too_long_header: "<b>⚠️ {count} tracks were skipped (max duration {limit_mins} mins):</b>"
+channel_play_depreciated: "هـذا الأمـر قـديـم. اسـتـخـدم <code><a>/cplay --set channel_id </code></a> لـتـعـيـيـن قـنـاة الـتـشـغـيـل 💜."
+play_multiple_tracks_too_long_header: "<b>تـم تـخـطـي {count} مـقـاطـع (الـحـد {limit_mins} دقـائـق):</b> 🧡"
 play_multiple_tracks_too_long_item: "— <i>{title}</i>"
-play_multiple_tracks_too_long_more: "... and {remaining} more."
-play_all_tracks_skipped: "❌ All found tracks were skipped due to duration limits."
-play_failed: "❌ Failed to play\nError: {error}"
-play_unable: "<b> ❌ Unable to Play </b>\n\n<i>Please <b>restart the voice</b> chat.</i>"
-play_downloading_song: "📥 Downloading song \"{title}\""
-play_download_canceled: "⚠️ Download canceled by {user}."
-play_added_multiple_header: "➕ <b>Added {count} tracks</b> by {user}"
-play_queue_limit_hint: "⚠️ <i>Queue limit reached — some tracks were skipped.</i>"
-play_queue_view_hint: "<i>Use /queue to view full list.</i>"
+play_multiple_tracks_too_long_more: "... و {remaining} آخـريـن."
+play_all_tracks_skipped: "تـم تـخـطـي جـمـيـع الـمـقـاطـع بـسـبـب حـدود الـوقـت 🧡."
+play_failed: "فـشـل الـتـشـغـيـل ⚡\nالـخـطـأ: {error}"
+play_unable: "<b> غـيـر قـادر عـلـى الـتـشـغـيـل </b> 🧡\n\n<i>يـرجـى <b>إعـادة تـشـغـيـل الـمـحـادثـة</b> الـصـوتـيـة.</i>"
+play_downloading_song: "🩵 جـاري تـحـمـيـل \"{title}\"..."
+play_download_canceled: "تـم إلـغـاء الـتـحـمـيـل بـواسـطـة {user} 🧡."
+play_added_multiple_header: "🧚 <b>تـمـت إضـافـة {count} مـقـاطـع</b> بـواسـطـة {user}"
+play_queue_limit_hint: "<i>وصـل الـحـد الأقـصـى لـلـقـائـمـة — تـم تـخـطـي بـعـض الـمـقـاطـع 🧡.</i>"
+play_queue_view_hint: "<i>اسـتـخـدم /queue لـعـرض الـقـائـمـة.</i>"
 
 # 🏓 Ping messages
-ping_start: "🏓 Pinging..."
+ping_start: "جـاري الـقـيـاس... ⚡"
 ping_result: |
-  <b>🏓 PONG</b>: <code>{latency}ms</code>
+  <b>⚡ بـونـج</b>: <code>{latency}ms</code>
   
-  <b><u>🤖 {bot} system stat's :</u></b>
+  <b><u>🧚 إحـصـائـيـات {bot} :</u></b>
   
-  <b>Uptime:</b> {uptime}
-  <b>RAM Usage:</b> {ram_info}
-  <b>CPU Usage:</b> {cpu_usage}
-  <b>Disk Usage:</b> {disk_usage}
+  <b>وقـت الـعـمـل:</b> {uptime}
+  <b>الـرام:</b> {ram_info}
+  <b>الـمـعـالـج:</b> {cpu_usage}
+  <b>الـقـرص:</b> {disk_usage}
 
 position_now: |
-  🎵 <b>{title}</b>
+  🧚 <b>{title}</b>
   📍 <code>{position} / {duration}</code>
-  ⚙️ Speed: <b>{speed}x</b>
+  💞 الـسـرعـة: <b>{speed}x</b>
 
-queue_limit_reached: "⚠️ Queue limit reached ({limit} tracks max). Use /clear to clear queue."
-queue_no_active: "⚠️ <b>No active playback.</b>\nNothing is queued right now."
-queue_header: "🎶 <b>Current Queue</b>"
-queue_now_playing: "▶️ <b>Now Playing:</b>"
-queue_up_next: "⏭️ <b>Up Next:</b>"
-queue_more_line: "\n… and {remaining} more"
-queue_empty_tail: "📭 <i>No more songs in queue.</i>"
-queue_empty: "⚠️ <b>The queue is already empty.</b>"
+queue_limit_reached: "وصـل حـد الـقـائـمـة ({limit} مـقـطـع). اسـتـخـدم /clear لـلـمـسـح 🧡."
+queue_no_active: "<b>لا يـوجـد تـشـغـيـل نـشـط.</b> 🤍\nلا شـيء فـي الـقـائـمـة."
+queue_header: "🧚 <b>الـقـائـمـة الـحـالـيـة</b>"
+queue_now_playing: "🧚 <b>يـعـمـل الآن:</b>"
+queue_up_next: "🧚 <b>الـتـالـي:</b>"
+queue_more_line: "\n… و {remaining} آخـريـن"
+queue_empty_tail: "<i>لا مـزيـد مـن الأغـانـي.</i> 📭"
+queue_empty: "<b>الـقـائـمـة فـارغـة بـالـفـعـل.</b> 🤍"
 
 # 🔄 Reload
-reload_start: "⚙️ Reloading admin cache, voice chat status, and assistant status..."
+reload_start: "جـاري تـحـديـث ذاكـرة الـمـشـرفـيـن، الـمـحـادثـة الـصـوتـيـة، والـمـسـاعـد... 💞"
 
-reload_done: "<b>⚙️ Reload complete:</b>\n\n{summary}"
+reload_done: "<b>💞 اكـتـمـل الـتـحـديـث:</b>\n\n{summary}"
 
-reload_admin_cache_ok: "<b>• Admin cache:</b> <i>✅ Done</i>"
-reload_admin_cache_fail: "<b>• Admin cache:</b> <i>❌ ({error})</i>"
+reload_admin_cache_ok: "<b>• ذاكـرة الـمـشـرفـيـن:</b> <i>🤍 تــم</i>"
+reload_admin_cache_fail: "<b>• ذاكـرة الـمـشـرفـيـن:</b> <i>🧡 ({error})</i>"
 
-reload_voice_inactive: "<b>• Voice chat:</b> <i>⚪ Inactive</i>"
-reload_voice_admin_required: "<b>• Voice chat:</b> <i>❌ Admin permission required</i>"
-reload_voice_fail: "<b>• Voice chat:</b> <i>❌ ({error})</i>"
-reload_voice_active: "<b>• Voice chat:</b> <i>✅ Active</i>"
+reload_voice_inactive: "<b>• الـمـحـادثـة الـصـوتـيـة:</b> <i>⚪ غـيـر نـشـطـة</i>"
+reload_voice_admin_required: "<b>• الـمـحـادثـة الـصـوتـيـة:</b> <i>🧡 مـطـلـوب مـشـرف</i>"
+reload_voice_fail: "<b>• الـمـحـادثـة الـصـوتـيـة:</b> <i>🧡 ({error})</i>"
+reload_voice_active: "<b>• الـمـحـادثـة الـصـوتـيـة:</b> <i>🤍 نـشـطـة</i>"
 
-reload_assistant_banned: "<b>• Assistant:</b> <i>❌ Banned</i>"
-reload_assistant_admin_required: "<b>• Assistant:</b> <i>❌ Admin permission required</i>"
-reload_assistant_fail: "<b>• Assistant:</b> <i>❌ ({error})</i>"
-reload_assistant_present: "<b>• Assistant:</b> <i>✅ Present</i>"
-reload_assistant_not_present: "<b>• Assistant:</b> <i>⚪ Not present</i>"
-reload_room_reset: "<b>• Room:</b> <i>Reset ✅</i>"
+reload_assistant_banned: "<b>• الـمـسـاعـد:</b> <i>🧡 مـحـظـور</i>"
+reload_assistant_admin_required: "<b>• الـمـسـاعـد:</b> <i>🧡 مـطـلـوب مـشـرف</i>"
+reload_assistant_fail: "<b>• الـمـسـاعـد:</b> <i>🧡 ({error})</i>"
+reload_assistant_present: "<b>• الـمـسـاعـد:</b> <i>🤍 مـوجـود</i>"
+reload_assistant_not_present: "<b>• الـمـسـاعـد:</b> <i>⚪ غـيـر مـوجـود</i>"
+reload_room_reset: "<b>• الـغـرفـة:</b> <i>إعـادة ضـبـط 🤍</i>"
 
 
-remove_usage: "⚠️ <b>Invalid usage.</b>\nUsage: <code>{cmd} [index]</code>"
-remove_invalid_index: "⚠️ <b>Invalid index.</b> It must be a <b>number</b>."
-remove_index_too_small: "⚠️ <b>Index must be greater than 0.</b>"
-remove_index_too_big: "⚠️ Invalid index. Queue only has <b>{total}</b> tracks."
-remove_success: "✅ Removed track at position <b>{index}</b> from the queue.\n👤 By: {user}"
+remove_usage: "<b>اسـتـخـدام خـاطـئ.</b> 🧡\nالاسـتـخـدام: <code>{cmd} [الترتيب]</code>"
+remove_invalid_index: "<b>رقـم غـيـر صـحـيـح.</b> يـجـب أن يـكـون <b>رقـمـاً</b> 🧡."
+remove_index_too_small: "<b>يـجـب أن يـكـون الـرقـم أكـبـر مـن 0.</b> 🧡."
+remove_index_too_big: "رقـم غـيـر صـالـح. الـقـائـمـة بـهـا <b>{total}</b> مـقـاطـع فـقـط 🧡."
+remove_success: "تـمـت إزالـة الـمـقـطـع رقـم <b>{index}</b> مـن الـقـائـمـة 💝.\n👤 بـواسـطـة: {user}"
 
 # 🔁 Replay
-replay_failed: "❌ <b>Replay Failed</b>\nError: <code>{error}</code>"
+replay_failed: "<b>فـشـلـت الإعـادة</b> 🧡\nالـخـطـأ: <code>{error}</code>"
 replay_success: |
-  🔁 <b>Now replaying</b>
+  💞 <b>تـمـت الإعـادة</b>
 
-  🎵 Title: {title}
-  ⏱️ Duration: <code>{duration}</code>
-  ⚙️ Speed: <b>{speed}x</b>
+  🧚 الـعـنـوان: {title}
+  ⏱️ الـمـدة: <code>{duration}</code>
+  💞 الـسـرعـة: <b>{speed}x</b>
 
 # ▶️ Resume
-resume_already_playing: "ℹ️ <b>Already Playing</b>\nThe music is already playing in this chat.\nWould you like to pause it?"
-resume_failed: "❌ <b>Playback Resume Failed</b>\nError: <code>{error}</code>"
+resume_already_playing: "<b>يـعـمـل بـالـفـعـل</b> 🤍\nالـمـوسـيـقـى تـعـمـل حـالـيـاً.\nهـل تـريـد إيـقـافـهـا؟"
+resume_failed: "<b>فـشـل الاسـتـئـنـاف</b> 🧡\nالـخـطـأ: <code>{error}</code>"
 resume_success: |
-  ▶️ <b>Resuming playback</b>
+  🧚 <b>تـم اسـتـئـنـاف الـتـشـغـيـل</b>
 
-  🎵 Title: {title}
-  📍 Position: {position} / {duration}
-  👤 Resumed by: {user}
+  🧚 الـعـنـوان: {title}
+  📍 الـمـوضـع: {position} / {duration}
+  🩵 بـواسـطـة: {user}
   {speed_line}
 
-restart: "♻️ Restarting..."
-restart_exepath_fail: "❌ Failed to get executable path: {error}"
-restart_symlink_fail: "❌ Failed to resolve executable path: {error}"
-restart_service: "{bot} has just restarted. Sorry for the issues.\n\nStart playing again after 10–15 seconds."
-restart_initiated: "✅ Restart initiated successfully!"
-restart_fail: "❌ Failed to restart: {error}"
+restart: "جـاري إعـادة الـتـشـغـيـل... 🧚"
+restart_exepath_fail: "فـشـل الـحـصـول عـلـى مـسـار الـمـلـف: {error} 🧡"
+restart_symlink_fail: "فـشـل حـل مـسـار الـمـلـف: {error} 🧡"
+restart_service: "تـمـت إعـادة تـشـغـيـل {bot}. آسـف لـلإزعـاج 🤍.\n\nابـدأ الـتـشـغـيـل مـرة أخـرى بـعـد 10–15 ثـانـيـة."
+restart_initiated: "تـم بـدء إعـادة الـتـشـغـيـل بـنـجـاح! 💝"
+restart_fail: "فـشـل إعـادة الـتـشـغـيـل: {error} 🧡"
 
 
-room_not_active_cb: "⚠️ Nothing playing right now."
-room_no_active: "⚠️ <b>No active playback.</b>\nThere's nothing playing right now."
-room_not_linked: "⚠️ This channel isn't linked to any group."
+room_not_active_cb: "لا شـيء يـعـمـل الآن 🤍."
+room_no_active: "<b>لا يـوجـد تـشـغـيـل نـشـط.</b> 🤍\nلا شـيء يـعـمـل حـالـيـاً."
+room_not_linked: "هـذه الـقـنـاة غـيـر مـرتـبـطـة بـأي مـجـمـوعـة 🧡."
 
-room_already_paused: "⏸️ Track is already paused. Tap ▶️ Resume to continue."
-room_already_paused_auto: "⏸️ Track is already paused — auto-resuming in {duration}."
-room_pause_failed: "❌ Failed to pause playback.\n\n<i>{error}</i>"
+room_already_paused: "⚡ الـمـقـطـع مـتـوقـف بـالـفـعـل. اضـغـط 🧚 لـلاسـتـئـنـاف."
+room_already_paused_auto: "⚡ مـتـوقـف بـالـفـعـل — اسـتـئـنـاف تـلـقـائـي خـلال {duration}."
+room_pause_failed: "فـشـل إيـقـاف الـتـشـغـيـل 🧡.\n\n<i>{error}</i>"
 
 rtmp_not_configured: |
-  ⚠️ <b>RTMP not configured!</b>
+  <b>RTMP غـيـر مـضـبـوط!</b> 🧡
   
-  Please set RTMP server first:
+  يـرجـى ضـبـط الـسـيـرفـر أولاً:
   <code>{cmd} rtmps://server/s/streamkey</code>
 
 rtmp_already_streaming: |
-  📡 <b>Already streaming!</b>
+  <b>الـبـث يـعـمـل بـالـفـعـل!</b> 🧚
   
-  Use <code>/streamstop</code> to end current stream.
+  اسـتـخـدم <code>/streamstop</code> لإنـهـاء الـبـث الـحـالـي.
 
 rtmp_init_failed: |
-  ❌ <b>Failed to initialize RTMP stream:</b>
+  <b>فـشـل بـدء بـث RTMP:</b> 🧡
   <code>{error}</code>
 
-rtmp_starting_stream: "📡 <b>Starting RTMP stream...</b>"
+rtmp_starting_stream: "<b>جـاري بـدء بـث RTMP...</b> 🧚"
 
 rtmp_play_failed: |
-  ❌ <b>Failed to start stream:</b>
+  <b>فـشـل بـدء الـبـث:</b> 🧡
   <code>{error}</code>
 
 rtmp_now_streaming: |
-  📡 <b>Now Streaming (RTMP):</b>
+  <b>جـاري الـبـث (RTMP):</b> 🧚
   
-  <b>▫ Track:</b> <a href="{url}">{title}</a>
-  <b>▫ Duration:</b> {duration}
-  <b>▫ Started by:</b> {by}
+  <b>▫ الـمـقـطـع:</b> <a href="{url}">{title}</a>
+  <b>▫ الـمـدة:</b> {duration}
+  <b>▫ بـواسـطـة:</b> {by}
   
-  ⚠️ <i>Note: RTMP has ~15-30s buffering delay</i>
+  💞 <i>مـلاحـظـة: RTMP بـه تـأخـيـر 15-30 ثـانـيـة</i>
 
-rtmp_not_streaming: "ℹ️ No active RTMP stream."
+rtmp_not_streaming: "لا يـوجـد بـث RTMP نـشـط 🤍."
 
 rtmp_stop_failed: |
-  ❌ <b>Failed to stop stream:</b>
+  <b>فـشـل إيـقـاف الـبـث:</b> 🧡
   <code>{error}</code>
 
 rtmp_stopped: |
-  ⏹️ <b>RTMP stream stopped</b> by {user}
+  🧚 <b>تـم إيـقـاف الـبـث</b> بـواسـطـة {user}
 
 rtmp_configured_not_started: |
-  ℹ️ <b>RTMP Status:</b> Not started
+  <b>حـالـة RTMP:</b> لـم يـبـدأ 🤍
   
-  <b>▫ Server:</b> <code>{server}</code>
-  <b>▫ State:</b> Ready to stream
+  <b>▫ الـسـيـرفـر:</b> <code>{server}</code>
+  <b>▫ الـحـالـة:</b> جـاهـز لـلـبـث
   
-  Use <code>/stream &lt;query&gt;</code> to start streaming.
+  اسـتـخـدم <code>/stream &lt;query&gt;</code> لـلـبـدء.
 
 rtmp_status_playing: |
-  📡 <b>RTMP Stream Status</b>
+  <b>حـالـة بـث RTMP</b> 🧚
   
-  <b>▫ State:</b> ▶️ Streaming
-  <b>▫ Position:</b> {position}
-  <b>▫ Server:</b> <code>{server}</code>
+  <b>▫ الـحـالـة:</b> 🧚 يـعـمـل
+  <b>▫ الـمـوضـع:</b> {position}
+  <b>▫ الـسـيـرفـر:</b> <code>{server}</code>
 
 rtmp_status_paused: |
-  📡 <b>RTMP Stream Status</b>
+  <b>حـالـة بـث RTMP</b> 🧚
   
-  <b>▫ State:</b> ⏸️ Paused
-  <b>▫ Server:</b> <code>{server}</code>
+  <b>▫ الـحـالـة:</b> ⚡ مـتـوقـف
+  <b>▫ الـسـيـرفـر:</b> <code>{server}</code>
 
 rtmp_status_idle: |
-  📡 <b>RTMP Stream Status</b>
+  <b>حـالـة بـث RTMP</b> 🧚
   
-  <b>▫ State:</b> ⏹️ Idle
-  <b>▫ Server:</b> <code>{server}</code>
+  <b>▫ الـحـالـة:</b> 🩵 خـامـل
+  <b>▫ الـسـيـرفـر:</b> <code>{server}</code>
 
 rtmp_dm_only: |
-  🔒 <b>Security Notice</b>
+  🔒 <b>تـنـبـيـه أمـنـي</b>
   
-  RTMP credentials should NEVER be shared in groups!
+  بـيـانـات RTMP لا يـجـب مـشـاركـتـهـا فـي الـمـجـمـوعـات أبـداً!
   
-  <b>📩 To configure RTMP:</b>
-  1. Open my private chat: @{bot_username}
-  2. Send: <code>{cmd} &lt;chat_id&gt; &lt;rtmp_url&gt;</code>
+  <b>🧚 لـلإعـداد:</b>
+  1. راسـلـنـي خـاص: @{bot_username}
+  2. أرسـل: <code>{cmd} &lt;chat_id&gt; &lt;rtmp_url&gt;</code>
   
-  <b>💡 Example:</b>
+  <b>💡 مـثـال:</b>
   <code>/setrtmp -1001234567890 rtmps://server/s/key</code>
 
 rtmp_setup_usage: |
-  ⚙️ <b>RTMP Configuration</b>
+  💞 <b>إعـداد RTMP</b>
   
-  <u>Usage:</u>
+  <u>الاسـتـخـدام:</u>
   <code>/setrtmp &lt;chat_id&gt; &lt;full_rtmp_url&gt;</code>
   
-  <b>📋 Parameters:</b>
-  • <code>chat_id</code> - Target chat/channel ID
-  • <code>full_rtmp_url</code> - Complete RTMP URL with stream key
+  <b>🤍 الـمـعـامـلات:</b>
+  • <code>chat_id</code> - آيـدي الـقـنـاة/الـمـجـمـوعـة
+  • <code>full_rtmp_url</code> - رابـط RTMP الـكـامـل مـع الـمـفـتـاح
   
-  <b>📝 Example:</b>
+  <b>🤍 مـثـال:</b>
   <code>/setrtmp -1001234567890 rtmps://dc5-1.rtmp.t.me/s/123:key</code>
   
-  <b>🔍 How to get chat ID:</b>
-  • Forward any message from chat to @userinfobot
-  • Or use <code>/id</code> command in the chat
+  <b>🔍 كـيـف تـجـلـب الآيـدي:</b>
+  • حـول رسـالـة لـبـوت @userinfobot
+  • أو اسـتـخـدم <code>/id</code> فـي الـمـجـمـوعـة
   
-  <b>🔐 Security:</b>
-  • Configuration only works in DM (private chat)
-  • You must be admin in target chat
-  • Credentials are stored securely
+  <b>🔐 الأمـان:</b>
+  • الإعـداد يـعـمـل فـي الـخـاص فـقـط
+  • يـجـب أن تـكـون مـشـرفـاً هـنـاك
+  • الـبـيـانـات مـحـفـوظـة بـأمـان
 
 rtmp_invalid_chat_id: |
-  ❌ <b>Invalid chat ID!</b>
+  <b>آيـدي غـيـر صـالـح!</b> 🧡
   
-  Please provide a valid numeric chat ID.
+  يـرجـى كـتـابـة آيـدي رقـمـي صـحـيـح.
   
-  <b>💡 Example:</b>
+  <b>🤍 مـثـال:</b>
   <code>/setrtmp -1001234567890 rtmps://...</code>
 
 rtmp_check_admin_failed: |
-  ❌ <b>Failed to verify admin status:</b>
+  <b>فـشـل الـتـحـقـق مـن الإشـراف:</b> 🧡
   <code>{error}</code>
   
-  <b>⚠️ Make sure:</b>
-  • I am admin in the target chat
-  • Chat ID is correct
-  • You have admin permissions
+  <b>⚠️ تـأكـد مـن:</b>
+  • أنـا مـشـرف فـي الـمـجـمـوعـة
+  • الآيـدي صـحـيـح
+  • لـديـك صـلاحـيـات
 
 rtmp_not_admin: |
-  ⚠️ <b>Permission Denied</b>
+  <b>تـم رفـض الـوصـول</b> 🧡
   
-  You must be an <b>administrator</b> in the target chat to configure RTMP.
+  يـجـب أن تـكـون <b>مـشـرفـاً</b> لـضـبـط الإعـدادات.
 
 rtmp_parse_failed: |
-  ❌ <b>Failed to parse RTMP URL:</b>
+  <b>فـشـل قـراءة الـرابـط:</b> 🧡
   <code>{error}</code>
   
-  <b>📋 Correct format:</b>
+  <b>🤍 الـصـيـغـة الـصـحـيـحـة:</b>
   <code>rtmp://server/app/streamkey</code>
-  or
+  أو
   <code>rtmps://server/s/streamkey</code>
 
 rtmp_streaming_not_supported: |
-  ⚠️ <b>Streaming not supported</b>
+  <b>الـبـث غـيـر مـدعـوم</b> 🧡
   
-  This action is not available while using <b>RTMP mode</b>.
+  هـذا الإجـراء غـيـر مـتـاح أثـنـاء <b>وضـع RTMP</b>.
   
-  Use <code>/stream</code> to play media via RTMP.
+  اسـتـخـدم <code>/stream</code> لـلـتـشـغـيـل عـبـر RTMP.
   
 rtmp_configured_success: |
-  ✅ <b>RTMP Configured Successfully!</b>
+  💝 <b>تـم ضـبـط RTMP بـنـجـاح!</b>
   
-  <b>🆔 Chat ID:</b> <code>{chat_id}</code>
-  <b>🔗 URL:</b> <code>{url}</code>
-  <b>🔑 Key:</b> <code>{key}</code>
+  <b>💞 الآيـدي:</b> <code>{chat_id}</code>
+  <b>💛 الـرابـط:</b> <code>{url}</code>
+  <b>🧚 الـمـفـتـاح:</b> <code>{key}</code>
   
-  <b>✨ Next Steps:</b>
-  Go to your chat and use:
-  <code>/stream &lt;song name&gt;</code>
+  <b>✨ الـخـطـوة الـتـالـيـة:</b>
+  اذهـب لـمـجـمـوعـتـك واسـتـخـدم:
+  <code>/stream &lt;اسـم الأغـنـيـة&gt;</code>
   
-  <b>🔒 Security Note:</b>
-  Credentials are stored securely and never shown in the group.
+  <b>🩵 مـلاحـظـة:</b>
+  الـبـيـانـات آمـنـة ولـن تـظـهـر فـي الـمـجـمـوعـة.
 
 
-searching: "🔍🎶 Searching... ⚡✨"
-searching_query: "🔍🎶 Searching for: <b>{query}</b>... ⚡✨"
+searching: "جـاري الـبـحـث... ⚡🧚"
+searching_query: "جـاري الـبـحـث عـن: <b>{query}</b>... 🥀✨"
 
-speed_line: "⚙️ Speed: <b>{speed}x</b>"
+speed_line: "💞 الـسـرعـة: <b>{speed}x</b>"
 
-stats_system_header: "🔧 <b>System:</b>"
-stats_go_mem_header: "📦 <b>Internal Memory (Go):</b>"
-stats_server_header: "💻 <b>Server Stats:</b>"
-stats_served_header: "📊 <b>Served:</b>"
+stats_system_header: "💞 <b>الـنـظـام:</b>"
+stats_go_mem_header: "🥀 <b>الـذاكـرة الـداخـلـيـة (Go):</b>"
+stats_server_header: "⚡ <b>إحـصـائـيـات الـسـيـرفـر:</b>"
+stats_served_header: "🩵 <b>الـخـدمـة:</b>"
 
-stats_system_os_arch: "• OS: <code>{os}</code>, Arch: <code>{arch}</code>"
-stats_system_cpu_goroutines: "• CPUs: <code>{cpus}</code>, Goroutines: <code>{goroutines}</code>"
+stats_system_os_arch: "• الـنـظـام: <code>{os}</code>, الـمـعـمـاريـة: <code>{arch}</code>"
+stats_system_cpu_goroutines: "• الـمـعـالـجـات: <code>{cpus}</code>, الـروتـيـن: <code>{goroutines}</code>"
 
-stats_go_alloc: "• Alloc: <code>{alloc} MB</code>"
-stats_go_sys: "• Sys: <code>{sys} MB</code>"
-stats_go_gc: "• NumGC: <code>{gc_count}</code> ({emoji} {gc_rate}/min)"
+stats_go_alloc: "• الـمـحـجـوز: <code>{alloc} MB</code>"
+stats_go_sys: "• الـنـظـام: <code>{sys} MB</code>"
+stats_go_gc: "• GC: <code>{gc_count}</code> ({emoji} {gc_rate}/د)"
 
-stats_server_cpu: "• CPU Usage: {emoji} <code>{cpu}%</code>"
-stats_server_ram: "• RAM Usage: {emoji} <code>{used_gib} GiB</code> | <code>{total_gib} GiB</code>"
-stats_server_storage: "• Storage: <code>{used_gib} GiB</code> | <code>{total_gib} GiB</code>"
+stats_server_cpu: "• اسـتـهـلاك CPU: {emoji} <code>{cpu}%</code>"
+stats_server_ram: "• اسـتـهـلاك RAM: {emoji} <code>{used_gib} GiB</code> | <code>{total_gib} GiB</code>"
+stats_server_storage: "• الـتـخـزيـن: <code>{used_gib} GiB</code> | <code>{total_gib} GiB</code>"
 
-stats_served_chats: "• Chats: <code>{count}</code>"
-stats_served_chats_err: "• Chats: <code>Error: {error}</code>"
+stats_served_chats: "• الـدردشـات: <code>{count}</code>"
+stats_served_chats_err: "• الـدردشـات: <code>خطأ: {error}</code>"
 
-stats_served_users: "• Users: <code>{count}</code>"
-stats_served_users_err: "• Users: <code>Error: {error}</code>"
+stats_served_users: "• الـمـسـتـخـدمـيـن: <code>{count}</code>"
+stats_served_users_err: "• الـمـسـتـخـدمـيـن: <code>خطأ: {error}</code>"
 
 # 👑 Sudo users
 
-sudo_owner_self: "😂 Haha, you’re the boss already! Why are you even trying to add yourself?"
-sudo_bot_self: "🤖 Haha, I’m the bot! I can’t add myself to the sudo list — even the owner can’t cheat me 😎"
-sudo_bot_user: "🤖 You can’t add a bot to the sudo list — sudoers must be human!"
+sudo_owner_self: "هـهـه، أنـت الـمـديـر بـالـفـعـل! لـمـاذا تـحـاول إضـافـة نـفـسـك؟ 🧚"
+sudo_bot_self: "هـهـه، أنـا الـبـوت! لا يـمـكـنـنـي إضـافـة نـفـسـي — حـتـى الـمـالـك لا يـسـتـطـيـع خـداعـي 🧚"
+sudo_bot_user: "لا يـمـكـنـك إضـافـة بـوت لـلـمـطـوريـن — يـجـب أن يـكـونـوا بـشـراً! 🧚"
 
-sudo_fetch_user_fail: "❌ Failed to fetch user info. Maybe the user is inaccessible.\n<i>{error}</i>"
-sudo_check_fail: "❌ Failed to check sudo existence: <i>{error}</i>"
-sudo_already: "⚠️ User {user} (ID:<code>{id}</code>) is already a sudoer."
-sudo_add_fail: "❌ Failed to add sudo: <i>{error}</i>"
-sudo_add_success: "✅ Added {user} (<code>{id}</code>) to sudoers."
-sudo_assistant_self: "🤖 The assistant is always in the sudo list by default — it cannot be added again."
+sudo_fetch_user_fail: "فـشـل جـلـب الـمـسـتـخـدم. ربـمـا غـيـر مـتـاح 🧡.\n<i>{error}</i>"
+sudo_check_fail: "فـشـل الـتـحـقـق مـن الـمـطـور: <i>{error}</i> 🧡"
+sudo_already: "{user} (ID:<code>{id}</code>) مـطـور بـالـفـعـل 🤍."
+sudo_add_fail: "فـشـل إضـافـة الـمـطـور: <i>{error}</i> 🧡"
+sudo_add_success: "تـمـت إضـافـة {user} (<code>{id}</code>) لـلـمـطـوريـن 💝."
+sudo_assistant_self: "الـمـسـاعـد دائـمـاً ضـمـن الـمـطـوريـن — لا يـمـكـن إضـافـتـه 🧚."
 
-sudo_owner_remove_block: "😎 Nice try! You can’t remove the owner — they’re untouchable."
-sudo_assistant_cannot_remove: "🤖 The assistant is required and cannot be removed from the sudo list."
-sudo_not_exists: "⚠️ User {user} (<code>{id}</code>) is not a sudoer."
-sudo_remove_fail: "❌ Failed to remove sudo: <i>{error}</i>"
-sudo_remove_success: "🗑️ Removed {user} (ID: <code>{id}</code>) from sudoers."
+sudo_owner_remove_block: "مـحـاولـة جـيـدة! لا يـمـكـنـك إزالـة الـمـالـك 🧚."
+sudo_assistant_cannot_remove: "الـمـسـاعـد ضـروري ولا يـمـكـن إزالـتـه 🧚."
+sudo_not_exists: "{user} (<code>{id}</code>) لـيـس مـطـوراً 🤍."
+sudo_remove_fail: "فـشـل إزالـة الـمـطـور: <i>{error}</i> 🧡"
+sudo_remove_success: "⚡ تـمـت إزالـة {user} (ID: <code>{id}</code>) مـن الـمـطـوريـن."
 
-sudo_list_fetching: "⏳ Fetching sudoers list..."
-sudo_list_fetch_fail: "❌ Failed to get sudoers: <code>{error}</code>"
-sudo_list_header: "👑 <b>Current Sudoers:</b>"
-sudo_list_owner: "{index}. {user} — <b>Owner</b>"
+sudo_list_fetching: "جـاري جـلـب قـائـمـة الـمـطـوريـن... ⏳"
+sudo_list_fetch_fail: "فـشـل جـلـب الـمـطـوريـن: <code>{error}</code> 🧡"
+sudo_list_header: "💜 <b>الـمـطـوريـن الـحـالـيـيـن:</b>"
+sudo_list_owner: "{index}. {user} — <b>الـمـالـك</b>"
 sudo_list_entry: "{index}. {user}"
-sudo_list_no_extra: "⚠️ No additional sudoers found."
+sudo_list_no_extra: "لا يـوجـد مـطـوريـن إضـافـيـيـن 🤍."
 
-seek_no_active: "⚠️ <b>No track is currently playing.</b>"
-seek_usage: "⚠️ Please provide seconds.\nExample: <code>{cmd} 40</code>"
-seek_invalid_seconds: "⚠️ Invalid seconds value.\nExample: <code>{cmd} 40</code>"
-seek_too_close_start: "⚠️ Cannot seek backward <b>{seconds}</b> seconds — that would be too close to the beginning of the track."
-seek_too_close_end: "⚠️ Cannot seek forward <b>{seconds}</b> seconds — that would be too close to the end of the track."
-seek_failed: "❌ Failed to seek {direction} <b>{seconds}</b> seconds.\nError: <code>{error}</code>"
-seek_success: "{emoji} Jumped {direction} to <u>{position}</u> of <u>{duration}</u>."
+seek_no_active: "<b>لا يـوجـد مـقـطـع يـعـمـل حـالـيـاً.</b> 🧡"
+seek_usage: "يـرجـى كـتـابـة الـثـوانـي.\nمـثـال: <code>{cmd} 40</code> 🤍"
+seek_invalid_seconds: "عـدد ثـوانـي غـيـر صـحـيـح 🧡.\nمـثـال: <code>{cmd} 40</code>"
+seek_too_close_start: "لا يـمـكـن الإرجـاع <b>{seconds}</b> ثـانـيـة — قـريـب جـداً مـن الـبـدايـة 💜."
+seek_too_close_end: "لا يـمـكـن الـتـقـديـم <b>{seconds}</b> ثـانـيـة — قـريـب جـداً مـن الـنـهـايـة 💜."
+seek_failed: "فـشـل الـبـحـث {direction} <b>{seconds}</b> ثـانـيـة 🧡.\nالـخـطـأ: <code>{error}</code>"
+seek_success: "{emoji} قـفـز {direction} إلـى <u>{position}</u> مـن <u>{duration}</u>."
 
-stopped: "⏹️ <b>Playback stopped and cleared by {user}.</b>"
+stopped: "🧚 <b>تـم الإيـقـاف والـمـسـح بـواسـطـة {user} 💝.</b>"
 
-shuffle_current_state: "🔀 Currently shuffle is <b>{state}</b> for this chat.\n\nUse <code>{cmd}</code> to toggle it."
-shuffle_updated: "🔀 Shuffle <b>{state}</b> by {user}."
+shuffle_current_state: "🩵 الـخـلـط حـالـيـاً <b>{state}</b> لـهـذه الـدردشـة.\n\nاسـتـخـدم <code>{cmd}</code> لـلـتـبـديـل."
+shuffle_updated: "💛 الـخـلـط <b>{state}</b> بـواسـطـة {user}."
 
-skip_stopped: "⏹️ Playback stopped. Queue is empty.\nSkipped by: {user}"
+skip_stopped: "🩵 تـوقـف الـتـشـغـيـل. الـقـائـمـة فـارغـة.\nتـم الـتـخـطـي بـواسـطـة: {user}"
 
 speed_usage: |
-  💡 <b>Usage:</b>
-  <code>{cmd} [speed] [duration]</code> — change playback speed
+  🥀 <b>الاسـتـخـدام:</b>
+  <code>{cmd} [speed] [duration]</code> — لـتـغـيـيـر الـسـرعـة
   
-  Allowed speed range: <b>0.50x → 4.00x</b>
-  Duration (optional) resets the speed after given seconds.
+  الـنـطـاق الـمـسـمـوح: <b>0.50x → 4.00x</b>
+  الـمـدة (اخـتـيـاري) لإعـادة الـضـبـط بـعـد الـثـوانـي.
   
-  Example:
-  <code>{cmd} 1.25 45</code> — play at 1.25x for 45 seconds.
+  مـثـال:
+  <code>{cmd} 1.25 45</code> — تـشـغـيـل بـسـرعـة 1.25 لـمـدة 45 ث.
 
-speed_current: "🎧 <b>Current Speed:</b> <code>{speed}x</code> for 🎵 <u>{title}</u>\n\n💡 Use <code>{cmd} reset</code> to restore normal playback."
+speed_current: "🎧 <b>الـسـرعـة الـحـالـيـة:</b> <code>{speed}x</code> لـ 🎵 <u>{title}</u>\n\n💡 اسـتـخـدم <code>{cmd} reset</code> لـلـوضـع الـطـبـيـعـي."
 
 speed_current_with_reset: |
-  🎧 <b>Current Speed:</b> <code>{speed}x</code>
+  ⚡ <b>الـسـرعـة الـحـالـيـة:</b> <code>{speed}x</code>
 
-  🎵 <b>Track:</b> <i>{title}</i>
-  ⏳ <b>Auto-reset in:</b> {duration}
+   <b>الـمـقـطـع:</b> <i>{title}</i>
+  💞 <b>إعـادة ضـبـط بـعـد:</b> {duration}
   
-  💡 Use <code>{cmd} reset</code> to restore normal playback instantly.
+  🧚 اسـتـخـدم <code>{cmd} reset</code> لـلاسـتـعـادة فـوراً.
 
-speed_invalid_value: "❌ Invalid speed value.\nExample: <code>{cmd} 1.5</code> or <code>{cmd} 2x</code>"
-speed_invalid_range: "⚠️ Speed must be between <b>0.50x</b> and <b>4.00x</b>."
-speed_invalid_duration: "⚠️ Invalid duration. It must be between <b>5</b> and <b>3600</b> seconds."
+speed_invalid_value: "قـيـمـة خـاطـئـة 🧡.\nمـثـال: <code>{cmd} 1.5</code>"
+speed_invalid_range: "الـسـرعـة يـجـب أن تـكـون بـيـن <b>0.50x</b> و <b>4.00x</b> 🧡."
+speed_invalid_duration: "مـدة غـيـر صـالـحـة. بـيـن <b>5</b> و <b>3600</b> ثـانـيـة 🧡."
 
-speed_already_set: "ℹ️ Playback speed is already <b>{speed}x</b> for 🎵 <b>{title}</b>"
+speed_already_set: "الـسـرعـة بـالـفـعـل <b>{speed}x</b> لـ 🎵 <b>{title}</b> 🤍."
 
-speed_already_set_reset_hint: "ℹ️ Playback speed is already <b>{speed}x</b> for 🎵 <b>{title}</b>\n\n💡 Use <code>{cmd} reset</code> to return to normal speed."
+speed_already_set_reset_hint: "الـسـرعـة بـالـفـعـل <b>{speed}x</b> لـ 🎵 <b>{title}</b>\n\n💡 اسـتـخـدم <code>{cmd} reset</code> لـلـعـودة لـلـطـبـيـعـي."
 
 speed_failed: |
-  ❌ Failed to change speed to <b>{speed}x</b>.
-  Error: <code>{error}</code>
+  فـشـل تـغـيـيـر الـسـرعـة إلـى <b>{speed}x</b> 🧡.
+  الـخـطـأ: <code>{error}</code>
 
-speed_reset_success: "✅ Playback speed reset to <b>1.0x</b> by {user}"
+speed_reset_success: "✅ تـمـت اسـتـعـادة الـسـرعـة <b>1.0x</b> بـواسـطـة {user} 💝."
 
-speed_set: "🚀 Playback speed set to <b>{speed}x</b> by {user}."
+speed_set: "🚀 تـم ضـبـط الـسـرعـة <b>{speed}x</b> بـواسـطـة {user}."
 speed_set_with_reset: |
-  🚀 Playback speed set to <b>{speed}x</b> by {user}.
-  ⏳ Will reset to normal after <b>{duration}</b> seconds.
+  ⚡ تـم ضـبـط الـسـرعـة <b>{speed}x</b> بـواسـطـة {user}.
+  🤍 سـتـعـود لـلـطـبـيـعـي بـعـد <b>{duration}</b> ثـانـيـة.
 
 
-spt_fetch_fail: "⚠️ Failed to fetch network info: <code>{error}</code>"
-spt_servers_fetch_fail: "⚠️ Failed to fetch servers: <code>{error}</code>"
-spt_best_server_fail: "⚠️ Failed to find best server: <code>{error}</code>"
+spt_fetch_fail: "فـشـل جـلـب مـعـلـومـات الـشـبـكـة: <code>{error}</code> 🧡"
+spt_servers_fetch_fail: "فـشـل جـلـب الـسـيـرفـرات: <code>{error}</code> 🧡"
+spt_best_server_fail: "فـشـل إيـجـاد أفـضـل سـيـرفـر: <code>{error}</code> 🧡"
 
-spt_running_download: "🚀 Running download test..."
-spt_running_upload: "📤 Running upload test..."
+spt_running_download: "جـاري اخـتـبـار الـتـحـمـيـل... 🚀"
+spt_running_upload: "جـاري اخـتـبـار الـرفـع... 📤"
 
 spt_result: |
-  <b>📡 SpeedTest Result</b>
+  <b>نـتـيـجـة قـيـاس الـسـرعـة 🧚</b>
 
-  <b><u>👤 Client</u></b>
+  <b><u>🧚 الـعـمـيـل</u></b>
   IP: <code>{ip}</code>
-  ISP: {isp}
-  Lat: <code>{lat}</code>
-  Lon: <code>{lon}</code>
+  الـمـزود: {isp}
+  خـط: <code>{lat}</code>
+  طـول: <code>{lon}</code>
 
-  <b><u>🛰️ Server</u></b>
-  Name: {server_name}
-  Country: {country}
-  Sponsor: {sponsor}
-  Distance: {distance_km} km
-  Latency: {latency_ms} ms
+  <b><u>💞 الـسـيـرفـر</u></b>
+  الاسـم: {server_name}
+  الـدولـة: {country}
+  الـراعـي: {sponsor}
+  الـمـسـافـة: {distance_km} km
+  الـتـأخـيـر: {latency_ms} ms
 
-  <b><u>⚡ Speed</u></b>
-  Download: <code>{dl_mbps} Mbps</code>
-  Upload: <code>{ul_mbps} Mbps</code>
+  <b><u>⚡ الـسـرعـة</u></b>
+  تـحـمـيـل: <code>{dl_mbps} Mbps</code>
+  رفـع: <code>{ul_mbps} Mbps</code>
 
-start_private: "Hello {user}, My name is {bot}.\n\nI'm a telegram streaming bot with some useful features. Supporting platforms like Youtube, Spotify, JioSaavn, Soundcloud etc.\n\nFeel free to add me to your groups."
+start_private: "مـرحـبـاً {user}, أنـا {bot} 💝.\n\nأنـا بـوت تـشـغـيـل مـوسـيـقـى عـلـى تـيـلـيـجـرام بـمـمـيـزات رائـعـة. أدعـم يـوتـيـوب، سـبـوتـيـفـاي، وغـيـرهـم.\n\nلا تـتـردد فـي إضـافـتـي لـمـجـمـوعـتـك 💞."
 
-start_group: "<b>💫 I’m here!</b> Try a command… if you think you can handle me 😉"
+start_group: "<b>أنــا هـنــا! 🧚</b> جــرب أي أمــر... إذا كـنـت تـعـتـقـد أنـك تـسـتـطـيـع الـتـعـامـل مـعـي 🧚💞."
 
-stream_channelid_fail: "⚠️ Failed to get your connected channel’s ID."
-stream_queue_finished: "🎵 <b>Queue Finished!</b>\n\nNo more songs to play. Use /play to add more tracks! 🎶"
-stream_downloading_next: "📥 Downloading your next track..."
-stream_download_fail: "❌ Failed to download.\nError: <code>{error}</code>\nUse /skip to skip playback."
-stream_play_fail: "❌ Failed to play the song."
+stream_channelid_fail: "فـشـل الـحـصـول عـلـى آيـدي الـقـنـاة الـمـرتـبـطـة 🧡."
+stream_queue_finished: "<b>انـتـهـت الـقـائـمـة!</b> 🤍\n\nلا مـزيـد مـن الأغـانـي. اسـتـخـدم /play لإضـافـة الـمـزيـد! 🧚"
+stream_downloading_next: "🩵 جـاري تـحـمـيـل الـمـقـطـع الـتـالـي..."
+stream_download_fail: "🥀 فـشـل الـتـحـمـيـل.\nالـخـطـأ: <code>{error}</code>\nاسـتـخـدم /skip لـلـتـخـطـي 🧡."
+stream_play_fail: "فـشـل تـشـغـيـل الأغـنـيـة 🧡."
 stream_now_playing: |
-  <b>🎵 Now Playing:</b>
+  <b>🧚 يـعـمـل الآن:</b>
 
-  <b>▫ Track:</b> <a href="{url}">{title}</a>
-  <b>▫ Duration:</b> {duration}
-  <b>▫ Requested by:</b> {by}
+  <b>▫ الـمـقـطـع:</b> <a href="{url}">{title}</a>
+  <b>▫ الـمـدة:</b> {duration}
+  <b>▫ طـلـب بـواسـطـة:</b> {by}
 
 # 👑 Sudo / Owner Join Messages
-sudo_join_owner: "👑 {user} — owner of {bot} — just entered the chat."
-sudo_join_sudo: "🛡️ {user}, a sudo user of {bot}, just joined the chat."
+sudo_join_owner: "💜 {user} — مـالـك {bot} — دخـل الـدردشـة الآن."
+sudo_join_sudo: "⚡ {user}, أحـد مـطـوري {bot}, انـضـم لـلـدردشـة."
 
 supergroup_needed: |
-  This chat (ID: <code>{chat_id}</code>) is not a supergroup yet.
-  <b>⚠️ Please convert this chat to a supergroup then add me as admin.</b>
+  هـذه الـدردشـة (ID: <code>{chat_id}</code>) لـيـسـت مـجـمـوعـة خـارقـة بـعـد 🧡.
+  <b>يـرجـى تـحـويـلـهـا لـمـجـمـوعـة خـارقـة ثـم رفـعـي مـشـرف.</b>
   
-  If you don't know how to convert, use this guide:
-  🔗 <a href=\"https://te.legra.ph/How-to-Convert-a-Group-to-a-Supergroup-01-02\">How to convert to a SuperGroup</a>
+  إذا كـنـت لا تـعـرف كـيـف، اسـتـخـدم هـذا الـدلـيـل:
+  🧚 <a href=\"https://te.legra.ph/How-to-Convert-a-Group-to-a-Supergroup-01-02\">طـريـقـة الـتـحـويـل لـمـجـمـوعـة خـارقـة</a>
   
-  If you have any questions, join our support group:
-  
-unmute_already: "ℹ️ <b>Already Unmuted</b>\nThe music is not muted in this chat."
-unmute_failed: "❌ <b>Playback Unmute Failed</b>\nError: <code>{error}</code>"
+unmute_already: "<b>غـيـر مـكـتـوم بـالـفـعـل</b> 🤍\nالـصـوت مـسـمـوع حـالـيـاً."
+unmute_failed: "<b>فـشـل إلـغـاء الـكـتـم</b> 🧡\nالـخـطـأ: <code>{error}</code>"
 unmute_success: |
-  🔊 <b>Unmuted playback</b>
+  💜 <b>تـم إلـغـاء الـكـتـم</b>
 
-  🎵 Track: {title}
-  👤 Unmuted by: {user}
+  🧚 الـمـقـطـع: {title}
+  💞 بـواسـطـة: {user}
   {speed_line}
 
 
 # 🔊 Voice Chat Events
-voicechat_ended: "📴 Voice chat ended!\nAll queues cleared."
-voicechat_started: "📢 Voice chat started!\nUse /play <song> to play music."
+voicechat_ended: "🩵 انـتـهـت الـمـحـادثـة الـصـوتـيـة!\nتـم مـسـح الـقـوائـم."
+voicechat_started: "🥀 بـدأت الـمـحـادثـة الـصـوتـيـة!\nاسـتـخـدم /play <song> لـلـتـشـغـيـل 🤍."
 
 # Commands help
 help_owner: |
-  👑 <b>Owner Commands</b>
+  💜 <b>أوامــر الـمـالــك</b>
 
-  <i>Exclusive tools for managing sudoers, executing system code, and performing bot administration securely.</i>
+  <i>أدوات حـصـريـة لإدارة الـمـطـوريـن، تـنـفـيـذ أكـواد الـنـظـام، وإدارة الـبـوت بـأمـان.</i>
 
-  <b>Commands:</b>
-  <b>/addsudo</b> - Add a new user to bot's sudolist
-  <b>/delsudo</b> - Remove a user from bot's sudolist
-  <b>/eval</b> - Execute Go code snippets
-  <b>/maintenance</b> — Manage the bot’s maintenance mode
-  <b>/restart</b> — Restart the bot
-  <b>/sh</b> - Run shell commands
+  <b>الأوامــر:</b>
+  <b>/addsudo</b> - إضـافـة مـطـور جـديـد
+  <b>/delsudo</b> - إزالـة مـطـور
+  <b>/eval</b> - تـنـفـيـذ أكـواد Go
+  <b>/maintenance</b> — إدارة وضـع الـصـيـانـة
+  <b>/restart</b> — إعـادة تـشـغـيـل الـبـوت
+  <b>/sh</b> - تـنـفـيـذ أوامـر Shell
 
 help_sudo: |
-  ⚡ <b>Sudoer Commands</b>
+  ⚡ <b>أوامــر الـمـطـوريـن</b>
 
-  <i>Advanced tools for managing bot behavior, monitoring performance, and controlling logging and automation.</i>
+  <i>أدوات مـتـقـدمـة لإدارة سـلـوك الـبـوت، مـراقـبـة الأداء، والـتـحـكـم فـي الـسـجـلات.</i>
 
-  <b>Commands:</b>
-  <b>/active</b> - Shows total active chats
-  <b>/autoleave</b> - Toggle automatic chat leaving
-  <b>/logger</b> - Enable or disable logger
-  <b>/stats</b> - Display the bot & system stats
-  <b>/logs</b> - Get the system logs 
+  <b>الأوامــر:</b>
+  <b>/active</b> - عـرض الـدردشـات الـنـشـطـة
+  <b>/autoleave</b> - الـتـحـكـم فـي الـمـغـادرة الـتـلـقـائـيـة
+  <b>/logger</b> - تـفـعـيـل أو تـعـطـيـل الـسـجـل
+  <b>/stats</b> - عـرض إحـصـائـيـات الـنـظـام
+  <b>/logs</b> - جـلـب سـجـلات الـنـظـام
 
 help_admin: |
-  🛠 <b>Admin Commands</b>
+  💞 <b>أوامــر الـمـشـرفـيـن</b>
 
-  <i>Music and playback control tools for admins to handle playback easily.</i>
+  <i>أدوات الـتـحـكـم فـي الـتـشـغـيـل لـلـمـشـرفـيـن لـلإدارة بـسـهـولـة.</i>
 
-  <b>Commands:</b>
-  <b>/speed</b> - Change playback speed
-  <b>/skip</b> - Skip the current song
-  <b>/pause</b> - Pause the current playback
-  <b>/resume</b> - Resume paused playback
-  <b>/replay</b> - Replay the current song
-  <b>/mute</b> - Mute playback
-  <b>/unmute</b> - Unmute playback
-  <b>/seek</b> - Seek forward by a few seconds
-  <b>/seekback</b> - Seek backward by a few seconds
-  <b>/jump</b> - Jump to a given time in track
-  <b>/move</b> - Move a queued track to another position
-  <b>/clear</b> - Clear all songs from queue
-  <b>/remove</b> - Remove a specific track from queue
-  <b>/shuffle</b> - Shuffle all queued tracks
-  <b>/loop</b> - Enable or disable looping
-  <b>/stop</b> - Stop playback and leave VC
+  <b>الأوامــر:</b>
+  <b>/speed</b> - تـغـيـيـر الـسـرعـة
+  <b>/skip</b> - تـخـطـي الأغـنـيـة الـحـالـيـة
+  <b>/pause</b> - إيـقـاف مـؤقـت
+  <b>/resume</b> - اسـتـئـنـاف الـتـشـغـيـل
+  <b>/replay</b> - إعـادة الـتـشـغـيـل
+  <b>/mute</b> - كـتـم الـصـوت
+  <b>/unmute</b> - إلـغـاء الـكـتـم
+  <b>/seek</b> - تـقـديـم بـالـثـوانـي
+  <b>/seekback</b> - تـرجـيـع بـالـثـوانـي
+  <b>/jump</b> - الـقـفـز لـوقـت مـحـدد
+  <b>/move</b> - نـقـل أغـنـيـة فـي الـقـائـمـة
+  <b>/clear</b> - مـسـح الـقـائـمـة
+  <b>/remove</b> - إزالـة أغـنـيـة مـحـددة
+  <b>/shuffle</b> - خـلـط الـقـائـمـة
+  <b>/loop</b> - تـفـعـيـل الـتـكـرار
+  <b>/stop</b> - إيـقـاف ومـغـادرة
 
 help_public: |
-  🌍 <b>Public Commands</b>
+  💙 <b>الأوامــر الـعـامــة</b>
 
-  <i>Features for playing songs, viewing queues, checking latency, and reporting bugs.</i>
+  <i>مـيـزات لـتـشـغـيـل الأغـانـي، عـرض الـقـائـمـة، فـحـص الـبـنـج، والـتـبـلـيـغ عـن الأخـطـاء.</i>
 
-  <b>Commands:</b>
-  <b>/play</b> - Play a song
-  <b>/queue</b> - View all tracks currently queued
-  <b>/ping</b> - Check bot’s network latency
-  <b>/start</b> - Start the bot
-  <b>/help</b> - Show help menu
-  <b>/bug</b> - Report an issue or problem
-  <b>/position</b> - Show current track’s timestamp
-  <b>/reload</b> - Reload admin or cache data
-  <b>/json</b> - Show message JSON structure
-  <b>/sudolist</b> - View sudo user list
+  <b>الأوامــر:</b>
+  <b>/play</b> - تـشـغـيـل أغـنـيـة
+  <b>/queue</b> - عـرض الـقـائـمـة
+  <b>/ping</b> - فـحـص سـرعـة الـبـوت
+  <b>/start</b> - بـدء الـبـوت
+  <b>/help</b> - قـائـمـة الـمـسـاعـدة
+  <b>/bug</b> - الـتـبـلـيـغ عـن خـطـأ
+  <b>/position</b> - عـرض الـوقـت الـحـالـي
+  <b>/reload</b> - تـحـديـث الـذاكـرة
+  <b>/json</b> - عـرض بـنـيـة الـرسـالـة
+  <b>/sudolist</b> - قـائـمـة الـمـطـوريـن
