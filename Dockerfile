@@ -1,4 +1,5 @@
-FROM golang:1.22-bookworm AS builder
+# 👇 التعديل هنا: رجعنا النسخة لـ 1.25 عشان المكتبات تشتغل
+FROM golang:1.25-bookworm AS builder
 
 WORKDIR /build
 
@@ -12,16 +13,12 @@ RUN apt-get update && \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# 👇 1. ننسخ ملف go.mod الأول
 COPY go.mod ./
-
-# 👇 2. ننسخ باقي ملفات المشروع عشان go mod tidy يشوف الكود
 COPY . .
 
-# 👇 3. دلوقتي نشغل go mod tidy عشان يحمل المكتبات الناقصة
+# سيقوم هذا الأمر بتحميل المكتبات المتوافقة مع 1.25
 RUN go mod tidy
 
-# 👇 4. نكمل بناء التطبيق
 RUN chmod +x install.sh && \
     ./install.sh -n --quiet --skip-summary && \
     CGO_ENABLED=1 go build -v -trimpath -ldflags="-w -s" -o app ./cmd/app/
