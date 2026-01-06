@@ -35,19 +35,13 @@ func InitAzanScheduler(client *telegram.Client) {
 
 	Scheduler = cron.New(cron.WithLocation(loc))
 
-	if _, err := Scheduler.AddFunc("5 0 * * *", UpdateAzanTimes); err != nil {
-		log.Println("AddFunc UpdateAzanTimes failed:", err)
-	}
-	if _, err := Scheduler.AddFunc("0 7 * * *", func() {
+	_, _ = Scheduler.AddFunc("5 0 * * *", UpdateAzanTimes)
+	_, _ = Scheduler.AddFunc("0 7 * * *", func() {
 		BroadcastDuas(MorningDuas, "أذكار الصباح")
-	}); err != nil {
-		log.Println("AddFunc MorningDuas failed:", err)
-	}
-	if _, err := Scheduler.AddFunc("0 20 * * *", func() {
+	})
+	_, _ = Scheduler.AddFunc("0 20 * * *", func() {
 		BroadcastDuas(NightDuas, "أذكار المساء")
-	}); err != nil {
-		log.Println("AddFunc NightDuas failed:", err)
-	}
+	})
 
 	go UpdateAzanTimes()
 	Scheduler.Start()
@@ -57,23 +51,19 @@ func UpdateAzanTimes() {
 	client := http.Client{Timeout: 10 * time.Second}
 	resp, err := client.Get("http://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=5")
 	if err != nil {
-		log.Println("HTTP request failed:", err)
+		log.Println("HTTP error:", err)
 		return
 	}
 	defer resp.Body.Close()
-
-	if resp == nil {
-		log.Println("HTTP response is nil")
-		return
-	}
 
 	var result struct {
 		Data struct {
 			Timings map[string]string `json:"timings"`
 		} `json:"data"`
 	}
+
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		log.Println("JSON decode failed:", err)
+		log.Println("Decode error:", err)
 		return
 	}
 
@@ -81,21 +71,15 @@ func UpdateAzanTimes() {
 		loc := Scheduler.Location()
 		Scheduler.Stop()
 		Scheduler = cron.New(cron.WithLocation(loc))
-
-		if _, err := Scheduler.AddFunc("5 0 * * *", UpdateAzanTimes); err != nil {
-			log.Println("AddFunc UpdateAzanTimes failed:", err)
-		}
-		if _, err := Scheduler.AddFunc("0 7 * * *", func() {
-			BroadcastDuas(MorningDuas, "أذكار الصباح")
-		}); err != nil {
-			log.Println("AddFunc MorningDuas failed:", err)
-		}
-		if _, err := Scheduler.AddFunc("0 20 * * *", func() {
-			BroadcastDuas(NightDuas, "أذكار المساء")
-		}); err != nil {
-			log.Println("AddFunc NightDuas failed:", err)
-		}
 	}
+
+	_, _ = Scheduler.AddFunc("5 0 * * *", UpdateAzanTimes)
+	_, _ = Scheduler.AddFunc("0 7 * * *", func() {
+		BroadcastDuas(MorningDuas, "أذكار الصباح")
+	})
+	_, _ = Scheduler.AddFunc("0 20 * * *", func() {
+		BroadcastDuas(NightDuas, "أذكار المساء")
+	})
 
 	for prayerKey, link := range PrayerLinks {
 		timeStr, ok := result.Data.Timings[prayerKey]
@@ -103,19 +87,19 @@ func UpdateAzanTimes() {
 			continue
 		}
 
-		clean := strings.Split(timeStr, " ")[0]
-		parts := strings.Split(clean, ":")
+		parts := strings.Split(strings.Split(timeStr, " ")[0], ":")
 		if len(parts) != 2 {
 			continue
 		}
+
 		h, _ := strconv.Atoi(parts[0])
 		m, _ := strconv.Atoi(parts[1])
 
 		pk := prayerKey
 		pl := link
+
 		spec := fmt.Sprintf("%d %d * * *", m, h)
-		
-		Scheduler.AddFunc(spec, func() {
+		_, _ = Scheduler.AddFunc(spec, func() {
 			BroadcastAzan(pk, pl)
 		})
 	}
@@ -127,7 +111,6 @@ func UpdateAzanTimes() {
 func BroadcastAzan(prayerKey, link string) {
 	chats, err := GetAllActiveChats()
 	if err != nil {
-		log.Println("GetAllActiveChats failed:", err)
 		return
 	}
 
@@ -140,34 +123,29 @@ func BroadcastAzan(prayerKey, link string) {
 }
 
 func BroadcastDuas(duas []string, title string) {
-	chats, err := GetAllActiveChats()
-	if err != nil {
-		log.Println("GetAllActiveChats failed:", err)
-		return
-	}
 	if len(duas) == 0 {
 		return
 	}
 
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	dua := duas[r.Intn(len(duas))]
+	chats, err := GetAllActiveChats()
+	if err != nil {
+		return
+	}
+
+	dua := duas[rand.Intn(len(duas))]
 
 	for _, chat := range chats {
 		settings, err := GetChatSettings(chat.ChatID)
-		if err != nil {
-			continue
-		}
-		if !settings.DuaActive {
+		if err != nil || !settings.DuaActive {
 			continue
 		}
 
-		BotClient.SendMessage(chat.ChatID, &telegram.SendMessageOptions{
+		_, _ = BotClient.SendMessage(chat.ChatID, &telegram.SendMessageOptions{
 			Text: fmt.Sprintf(
 				"💫 **%s**\n\n%s\n\n<b>تـقـبـل الله مـنـا ومـنـكـم صـالـح الأعـمـال 🧚</b>",
 				title,
 				dua,
 			),
-			ReplyMarkup: nil,
 		})
 	}
 }
@@ -175,7 +153,6 @@ func BroadcastDuas(duas []string, title string) {
 func StartAzanStream(chatID int64, prayerKey, link string, forceTest bool) {
 	cs, err := core.GetChatState(chatID)
 	if err != nil {
-		log.Println("GetChatState failed:", err)
 		return
 	}
 
@@ -183,76 +160,53 @@ func StartAzanStream(chatID int64, prayerKey, link string, forceTest bool) {
 	if !active {
 		assistant := core.Assistants.Get(chatID)
 		if assistant == nil {
-			if forceTest {
-				BotClient.SendMessage(chatID, &telegram.SendMessageOptions{
-					Text:        "No Assistant",
-					ReplyMarkup: nil,
-				})
-			}
 			return
 		}
-		if err2 := assistant.PhoneCreateGroupCall(chatID, ""); err2 != nil {
-			log.Println("PhoneCreateGroupCall error:", err2)
-		}
+		_ = assistant.PhoneCreateGroupCall(chatID, "")
 		time.Sleep(3 * time.Second)
 	}
 
 	if present, _ := cs.IsAssistantPresent(); !present {
-		if err2 := cs.TryJoin(); err2 != nil {
-			log.Println("Join VC failed:", err2)
-		}
+		_ = cs.TryJoin()
 		time.Sleep(2 * time.Second)
 	}
 
 	if stickerID, ok := PrayerStickers[prayerKey]; ok {
-		BotClient.SendSticker(chatID, &telegram.SendStickerOptions{
+		_, _ = BotClient.SendSticker(chatID, &telegram.SendStickerOptions{
 			Sticker: &telegram.InputFileID{ID: stickerID},
 		})
 	}
 
-	caption := fmt.Sprintf(
-		"🕌 **حـان الآن مـوعـد أذان %s**\n<b>بـالـتـوقـيـت الـمـحـلـي لـمـديـنـة الـقـاهـره 🧚</b>",
-		PrayerNamesStretched[prayerKey],
-	)
-
 	statusMsg, err := BotClient.SendMessage(chatID, &telegram.SendMessageOptions{
-		Text:        caption,
-		ReplyMarkup: nil,
+		Text: fmt.Sprintf(
+			"🕌 **حـان الآن مـوعـد أذان %s**\n<b>بـالـتـوقـيـت الـمـحـلـي لـمـديـنـة الـقـاهـره 🧚</b>",
+			PrayerNamesStretched[prayerKey],
+		),
 	})
 	if err != nil {
-		log.Println("SendMessage caption failed:", err)
 		return
 	}
 
 	dummyMsg := &telegram.NewMessage{
 		Client: BotClient,
 		Message: &telegram.Message{
-			Chat:        &telegram.Chat{ID: chatID},
-			Text:        link,
-			Sender:      &telegram.Peer{ID: config.OwnerID},
-			ReplyMarkup: nil,
+			Chat:   &telegram.Chat{ID: chatID},
+			Text:   link,
+			Sender: &telegram.Peer{ID: config.OwnerID},
 		},
 	}
 
 	tracks, err := platforms.GetTracks(dummyMsg, false)
-	if err != nil {
-		log.Println("GetTracks failed:", err)
-		BotClient.DeleteMessages(chatID, []int{statusMsg.ID})
-		return
-	}
-	if len(tracks) == 0 {
-		log.Println("No tracks found for link")
-		BotClient.DeleteMessages(chatID, []int{statusMsg.ID})
+	if err != nil || len(tracks) == 0 {
+		_, _ = BotClient.DeleteMessages(chatID, []int{statusMsg.ID})
 		return
 	}
 
-	track := tracks[0](track.Requester) = "خـدمـة الأذان"
+	track := tracks[0]
+	track.Requester = "خـدمـة الأذان"
 
-	ctx := context.Background()
-	path, err := platforms.Download(ctx, track, statusMsg)
+	path, err := platforms.Download(context.Background(), track, statusMsg)
 	if err != nil {
-		statusMsg.Edit("Download Fail")
-		log.Println("Download error:", err)
 		return
 	}
 
@@ -260,21 +214,21 @@ func StartAzanStream(chatID int64, prayerKey, link string, forceTest bool) {
 		room.Play(track, path, true)
 	}
 
-	// === SNIPER MODE: HIDE KEYBOARD ===
-	go func() {
-		// Quick loop to catch the playing message
-		for i := 0; i < 5; i++ {
-			time.Sleep(800 * time.Millisecond)
-			history, err := BotClient.GetHistory(chatID, 0, 0, 0, 3, 0, 0, 0)
-			if err == nil && history != nil {
-				for _, m := range history.Messages {
-					// Check if message is from bot AND has buttons (Keyboard)
-					if m.Sender.ID == BotClient.Self.ID && m.ReplyMarkup != nil {
-						BotClient.DeleteMessages(chatID, []int{m.ID})
-						return
-					}
-				}
+	go hideAzanKeyboard(chatID)
+}
+
+func hideAzanKeyboard(chatID int64) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(800 * time.Millisecond)
+		history, err := BotClient.GetHistory(chatID, 0, 0, 0, 3, 0, 0, 0)
+		if err != nil || history == nil {
+			continue
+		}
+		for _, m := range history.Messages {
+			if m.Sender != nil && m.Sender.ID == BotClient.Self.ID && m.ReplyMarkup != nil {
+				_, _ = BotClient.DeleteMessages(chatID, []int{m.ID})
+				return
 			}
 		}
-	}()
+	}
 }
