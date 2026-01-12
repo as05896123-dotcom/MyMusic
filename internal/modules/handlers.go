@@ -7,6 +7,7 @@ package modules
 import (
 	"fmt"
 	"log"
+	"regexp" // ضفنا المكتبة دي عشان نعالج النصوص
 
 	"github.com/Laky-64/gologging"
 	"github.com/amarnathcjd/gogram/telegram"
@@ -312,7 +313,7 @@ var handlers = []MsgHandlerDef{
 		Filters: []telegram.Filter{superGroupFilter},
 	},
 
-	// CPlay commands (أوامر تشغيل القنوات)
+	// CPlay commands
 	{
 		Pattern: "(?i)^/?(cplay|cvplay)$",
 		Handler: cplayHandler,
@@ -446,18 +447,27 @@ func Init(bot *telegram.Client, assistants *core.AssistantManager) {
 	})
 
 	// -----------------------------------------------------
-	//  تم التصحيح: استخدام OnRegex بدلاً من AddHandler الخاطئ
+	//  FIXED: Manual Regex implementation
+	//  هنا عملنا فلتر يدوي عشان نضمن إنه يشتغل مع أي إصدار
 	// -----------------------------------------------------
 	for _, h := range handlers {
-		// بنستخدم OnRegex مباشرة لأنها بتدعم الريجيكس
-		handlerObj := bot.OnRegex(h.Pattern, SafeMessageHandler(h.Handler))
-
-		// لو فيه فلاتر إضافية (زي المشرفين، الجروبات) بنضيفها هنا
-		if len(h.Filters) > 0 {
-			handlerObj.AddFilters(h.Filters...)
+		// 1. تجميع النمط (Compile Regex)
+		regex, err := regexp.Compile(h.Pattern)
+		if err != nil {
+			gologging.Error("Invalid regex pattern: " + h.Pattern)
+			continue
 		}
 
-		handlerObj.SetGroup(100)
+		// 2. عمل فلتر مخصص (Custom Filter)
+		regexFilter := func(m *telegram.Message) bool {
+			return m.Text != "" && regex.MatchString(m.Text)
+		}
+
+		// 3. دمج الفلتر الجديد مع الفلاتر الموجودة (إن وجدت)
+		allFilters := append([]telegram.Filter{regexFilter}, h.Filters...)
+
+		// 4. استخدام NewMessage العادي خالص
+		bot.AddHandler(telegram.NewMessage(allFilters...), SafeMessageHandler(h.Handler)).SetGroup(100)
 	}
 
 	for _, h := range cbHandlers {
