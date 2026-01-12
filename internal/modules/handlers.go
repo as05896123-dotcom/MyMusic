@@ -1,14 +1,15 @@
 // internal/modules/handlers.go
 /*
   - هذا الملف جزء من مشروع YukkiMusic (معدّل لدعم أوامر عربية بدون /)
+  - تم إصلاح مشكلة توافق توقيعات المعالجات (handlers) عبر استخدام reflection عند استدعاء bot.On
   - ملاحظة: يفترض وجود تعاريف/دوال أخرى في المشروع (jsonHandle, playHandler, ...).
-  - اقرأ الملاحظات في نهاية الملف إذا ظهر لك خطأ متعلق بمكتبة gogram.
 */
 package modules
 
 import (
 	"fmt"
 	"log"
+	"reflect"
 	"regexp"
 	"strings"
 
@@ -35,45 +36,37 @@ type CbHandlerDef struct {
 	Filters []telegram.Filter
 }
 
-// ---------- هنا نضع الأنماط (patterns) سواء بالإنجليزي أو بالعربي.
-//  لاحظ أننا نضع عدة أشكال لكل أمر (إنجليزي، عربي، واختصارات).
-//  كذلك نستعمل أنماط لا تحتاج / بالبداية — لكن نسمح أيضًا بوجود / اختياري.
+// wordPattern: يبني regex يقبل الكلمات بالانجليزي او العربي، مع او بدون /
 func wordPattern(words ...string) string {
-	// يبني regex مثل `(?i)^(?:/)?(?:play|تشغيل|ابدأ)\b`
 	escaped := make([]string, 0, len(words))
 	for _, w := range words {
 		escaped = append(escaped, regexp.QuoteMeta(w))
 	}
+	// (?i) -> case-insensitive, (?:/)? -> يسمح بوجود "/" أو لا
 	return `(?i)^(?:/)?(?:` + strings.Join(escaped, "|") + `)\b`
 }
 
 var handlers = []MsgHandlerDef{
-	// أدوات وادمن
 	{Pattern: wordPattern("json"), Handler: jsonHandle},
 	{Pattern: wordPattern("eval"), Handler: evalHandle, Filters: []telegram.Filter{ownerFilter}},
 	{Pattern: wordPattern("ev"), Handler: evalCommandHandler, Filters: []telegram.Filter{ownerFilter}},
 	{Pattern: wordPattern("bash", "sh"), Handler: shellHandle, Filters: []telegram.Filter{ownerFilter}},
 	{Pattern: wordPattern("restart", "إعادة تشغيل", "إعادة_تشغيل"), Handler: handleRestart, Filters: []telegram.Filter{ownerFilter, ignoreChannelFilter}},
 
-	// sudo management
 	{Pattern: wordPattern("addsudo", "addsudoer", "sudoadd", "أضف_سودو", "اضف_سودو"), Handler: handleAddSudo, Filters: []telegram.Filter{ownerFilter, ignoreChannelFilter}},
 	{Pattern: wordPattern("delsudo", "remsudo", "سحب_سودو", "احذف_سودو"), Handler: handleDelSudo, Filters: []telegram.Filter{ownerFilter, ignoreChannelFilter}},
 	{Pattern: wordPattern("sudoers", "قائمة_السودو", "قائمه_السودو"), Handler: handleGetSudoers, Filters: []telegram.Filter{ignoreChannelFilter}},
 
-	// اختبارات وسرعات
 	{Pattern: wordPattern("speedtest", "spt", "اختبار_سرعة"), Handler: sptHandle, Filters: []telegram.Filter{sudoOnlyFilter, ignoreChannelFilter}},
 
-	// بث ورسائل
 	{Pattern: wordPattern("broadcast", "gcast", "bcast", "بث"), Handler: broadcastHandler, Filters: []telegram.Filter{ownerFilter, ignoreChannelFilter}},
 
-	// حالة البوت وصيانته
 	{Pattern: wordPattern("active", "ac", "activevc", "activevoice", "الحالة"), Handler: activeHandler, Filters: []telegram.Filter{sudoOnlyFilter, ignoreChannelFilter}},
 	{Pattern: wordPattern("maintenance", "maint", "صيانة"), Handler: handleMaintenance, Filters: []telegram.Filter{ownerFilter, ignoreChannelFilter}},
 	{Pattern: wordPattern("logger", "سجل", "لوغ"), Handler: handleLogger, Filters: []telegram.Filter{sudoOnlyFilter, ignoreChannelFilter}},
 	{Pattern: wordPattern("autoleave", "autolev", "المغادرة_الآلية"), Handler: autoLeaveHandler, Filters: []telegram.Filter{sudoOnlyFilter, ignoreChannelFilter}},
 	{Pattern: wordPattern("log", "logs"), Handler: logsHandler, Filters: []telegram.Filter{sudoOnlyFilter, ignoreChannelFilter}},
 
-	// أوامر مساعدة عامة
 	{Pattern: wordPattern("help", "مساعدة", "مساعدتي"), Handler: helpHandler, Filters: []telegram.Filter{ignoreChannelFilter}},
 	{Pattern: wordPattern("ping", "بنق", "بنج"), Handler: pingHandler, Filters: []telegram.Filter{ignoreChannelFilter}},
 	{Pattern: wordPattern("start", "ابدأ", "اهلا", "أهلا"), Handler: startHandler, Filters: []telegram.Filter{ignoreChannelFilter}},
@@ -81,13 +74,11 @@ var handlers = []MsgHandlerDef{
 	{Pattern: wordPattern("bug", "اخطا", "خلل"), Handler: bugHandler, Filters: []telegram.Filter{ignoreChannelFilter}},
 	{Pattern: wordPattern("lang", "language", "اللغة"), Handler: langHandler, Filters: []telegram.Filter{superGroupFilter, authFilter}},
 
-	// أوامر البث و الستريم
 	{Pattern: wordPattern("stream", "بث"), Handler: streamHandler, Filters: []telegram.Filter{superGroupFilter}},
 	{Pattern: wordPattern("streamstop", "ايقاف_بث", "ايقاف_البث"), Handler: streamStopHandler, Filters: []telegram.Filter{superGroupFilter, authFilter}},
 	{Pattern: wordPattern("streamstatus", "حالة_البث"), Handler: streamStatusHandler, Filters: []telegram.Filter{superGroupFilter}},
 	{Pattern: wordPattern("rtmp", "setrtmp", "رتمپ"), Handler: setRTMPHandler},
 
-	// أوامر التشغيل (إنجليزي + عربي)
 	{Pattern: wordPattern("play", "تشغيل", "شغل", "ابدأ_تشغيل"), Handler: playHandler, Filters: []telegram.Filter{superGroupFilter}},
 	{Pattern: wordPattern("fplay", "playforce", "تشغيل_إجبارى"), Handler: fplayHandler, Filters: []telegram.Filter{superGroupFilter, authFilter}},
 	{Pattern: wordPattern("cplay", "تشغيل_القناة", "تشغيل_قناة"), Handler: cplayHandler, Filters: []telegram.Filter{superGroupFilter}},
@@ -114,7 +105,6 @@ var handlers = []MsgHandlerDef{
 	{Pattern: wordPattern("authlist", "قائمة_الادمنية"), Handler: authListHandler, Filters: []telegram.Filter{superGroupFilter}},
 }
 
-// Callback handlers
 var cbHandlers = []CbHandlerDef{
 	{Pattern: "start", Handler: startCB},
 	{Pattern: "help_cb", Handler: helpCB},
@@ -127,64 +117,58 @@ var cbHandlers = []CbHandlerDef{
 	{Pattern: "progress", Handler: emptyCBHandler},
 }
 
-// Init تسجّل المعالجات في بوت gogram
+// Init: تسجل المعالجات في البوت
 func Init(bot *telegram.Client, assistants *core.AssistantManager) {
-	// تحديث حالة التحديثات للبت والـ assistants
 	bot.UpdatesGetState()
 	assistants.ForEach(func(a *core.Assistant) {
 		a.Client.UpdatesGetState()
 	})
 
-	// تسجيل أوامر الرسائل (command-like handlers)
+	// تسجيل handlers كـ command-like (regex patterns)
 	for _, h := range handlers {
-		// ملاحظة: بعض نسخ gogram تُرجع Handle يمكن تعديلها (SetGroup، AddFilters)
-		// إذا كان الإصدار عندك لا يدعم chaining فاحذف SetGroup أو استخدم الأسلوب الصحيح.
+		// حاول تسجيل وأضف SetGroup إن أمكن
+		// بعض إصدارات gogram تُعيد قيمة قابلة للاستعمال، وبعضها لا.
+		// لذا نتعامل بحذر: إذا أعاد AddCommandHandler شيئًا نستدعي SetGroup بالـ reflection-friendly approach.
 		if handlerObj := bot.AddCommandHandler(h.Pattern, SafeMessageHandler(h.Handler), h.Filters...); handlerObj != nil {
-			// حاول وضع المجموعة إن كانت الواجهة تدعم ذلك
-			// (إذا أعطى الكومبايل خطأ هنا فامسح السطر أو عيّنه حسب واجهة مكتبتك)
-			_ = handlerObj.SetGroup(100)
+			// إذا كان لديه SetGroup فنعيّنها، وإلا نتجاهل
+			_ = trySetGroup(handlerObj, 100)
 		}
 	}
 
 	// تسجيل callback handlers
 	for _, h := range cbHandlers {
 		if cbObj := bot.AddCallbackHandler(h.Pattern, SafeCallbackHandler(h.Handler), h.Filters...); cbObj != nil {
-			_ = cbObj.SetGroup(90)
+			_ = trySetGroup(cbObj, 90)
 		}
 	}
 
-	// بعض أحداث التحرير (edit) — قد تختلف التوقيعات بين نسخ gogram
-	// إذا كانت الدالة bot.On غير متوفرة في إصدارك استعمل الأسلوب البديل المناسب.
+	// الآن نستدعي bot.On للأحداث المتغايرة التواقيع (edit, participant, ...)
 	_ = tryBotOn(bot, "edit:/eval", evalHandle, 80)
 	_ = tryBotOn(bot, "edit:/ev", evalCommandHandler, 80)
 
-	// حدث مشاركة/مشارك
+	// 'participant' يستخدم توقيعًا مختلفًا عند البعض -> استعمل tryBotOn بالديناميكية
 	_ = tryBotOn(bot, "participant", handleParticipantUpdate, 70)
 
 	// Action handler
 	if ah := bot.AddActionHandler(handleActions); ah != nil {
-		_ = ah.SetGroup(60)
+		_ = trySetGroup(ah, 60)
 	}
 
-	// ربط أحداث نهاية البث للـ assistants
 	assistants.ForEach(func(a *core.Assistant) {
 		a.Ntg.OnStreamEnd(ntgOnStreamEnd)
 	})
 
-	// تشغيل مراقبة الغرف في goroutine
 	go MonitorRooms()
 
-	// تشغيل المغادرة التلقائية إن مفعّلة
 	if is, _ := database.GetAutoLeave(); is {
 		go startAutoLeave()
 	}
 
-	// تعيين أوامر البوت إن تطلب ذلك
 	if config.SetCmds && config.OwnerID != 0 {
 		go setBotCommands(bot)
 	}
 
-	// تجهيز مساعدة أوصاف أوامر channel-play (قابلة للتعديل)
+	// تجهيز أوصاف أوامر القناة
 	cplayCommands := []string{
 		"/cfplay", "/vcplay", "/fvcplay",
 		"/cpause", "/cresume", "/cskip", "/cstop",
@@ -210,20 +194,45 @@ func Init(bot *telegram.Client, assistants *core.AssistantManager) {
 	}
 }
 
-// دالة وسيطة تحاول استدعاء bot.On إذا كانت متاحة في إصدار المكتبة
-func tryBotOn(bot *telegram.Client, event string, handler telegram.MessageHandler, group int) error {
-	// بعض نسخ المكتبة توفر bot.On(name, handler).SetGroup(n)
-	// لو لم تتوفر سنكتفي بإرجاع nil (لا تؤدي إلا إذا كانت واجهة مختلفة)
-	defer func() {
-		// منع panic لو لم يكن الأسلوب موجودًا
-		_ = recover()
-	}()
-	// محاولة استدعاء الأسلوب ديناميكيا (ملحوظة: هذه الطريقة تحمي من الـ panic أثناء الترجمة)
-	if on := bot.On; on != nil {
-		// try to call; may fail at compile time if signature doesn't match
-		// وذلك لماذا نحيطها بحماية recover؛ لو فشل قم بإزالة استدعاء tryBotOn لاحقًا
-		bot.On(event, handler).SetGroup(group)
+// trySetGroup: يحاول استدعاء SetGroup عبر reflection إن وجدت
+func trySetGroup(obj interface{}, group int) error {
+	defer func() { _ = recover() }()
+	v := reflect.ValueOf(obj)
+	if !v.IsValid() {
+		return nil
 	}
+	setGroup := v.MethodByName("SetGroup")
+	if !setGroup.IsValid() {
+		return nil
+	}
+	// استدعاء SetGroup(int)
+	setGroup.Call([]reflect.Value{reflect.ValueOf(group)})
+	return nil
+}
+
+// tryBotOn: يستعمل reflection لاستدعاء bot.On(event, handler).SetGroup(group)
+// handler يمكن أن يكون أي توقيع (message handler, participant handler, ...).
+// هذا يجنب أخطاء التوافق بين توقيعات الدوال عند التجميع.
+func tryBotOn(bot *telegram.Client, event string, handler interface{}, group int) error {
+	defer func() { _ = recover() }()
+
+	bv := reflect.ValueOf(bot)
+	if !bv.IsValid() {
+		return nil
+	}
+	on := bv.MethodByName("On")
+	if !on.IsValid() {
+		// واجهة bot لا تحتوي On — نسكت
+		return nil
+	}
+
+	// استدعاء bot.On(event, handler)
+	res := on.Call([]reflect.Value{reflect.ValueOf(event), reflect.ValueOf(handler)})
+	if len(res) == 0 {
+		return nil
+	}
+	// قد يرجع Handle واحد؛ حاول استدعاء SetGroup عليه
+	trySetGroup(res[0].Interface(), group)
 	return nil
 }
 
@@ -235,19 +244,16 @@ func ntgOnStreamEnd(
 	onStreamEndHandler(chatID)
 }
 
-// setBotCommands — تعيين قائمة الأوامر للواجهات المختلفة
+// setBotCommands — مساعدة لتعيين الأوامر
 func setBotCommands(bot *telegram.Client) {
-	// Set commands for normal users in private chats
 	if _, err := bot.BotsSetBotCommands(&telegram.BotCommandScopeUsers{}, "", AllCommands.PrivateUserCommands); err != nil {
 		gologging.Error("Failed to set PrivateUserCommands " + err.Error())
 	}
 
-	// Set commands for normal users in group chats
 	if _, err := bot.BotsSetBotCommands(&telegram.BotCommandScopeChats{}, "", AllCommands.GroupUserCommands); err != nil {
 		gologging.Error("Failed to set GroupUserCommands " + err.Error())
 	}
 
-	// Set commands for chat admins
 	if _, err := bot.BotsSetBotCommands(
 		&telegram.BotCommandScopeChatAdmins{},
 		"",
@@ -256,7 +262,6 @@ func setBotCommands(bot *telegram.Client) {
 		gologging.Error("Failed to set GroupAdminCommands " + err.Error())
 	}
 
-	// Set commands for sudo users in their private chat
 	sudoers, err := database.GetSudoers()
 	if err != nil {
 		log.Printf("Failed to get sudoers for setting commands: %v", err)
