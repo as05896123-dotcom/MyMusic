@@ -446,15 +446,18 @@ func Init(bot *telegram.Client, assistants *core.AssistantManager) {
 	})
 
 	// -----------------------------------------------------
-	//  تعديل طريقة التسجيل لاستخدام FilterRegex بدلاً من CommandHandler
+	//  تم التصحيح: استخدام OnRegex بدلاً من AddHandler الخاطئ
 	// -----------------------------------------------------
 	for _, h := range handlers {
-		// بنجمع فلتر الريجيكس مع الفلاتر الأصلية للأمر
-		allFilters := append([]telegram.Filter{telegram.FilterRegex(h.Pattern)}, h.Filters...)
-		
-		// بنستخدم AddHandler العادي عشان يقبل الريجيكس
-		bot.AddHandler(telegram.NewMessage(allFilters...), SafeMessageHandler(h.Handler)).
-			SetGroup(100)
+		// بنستخدم OnRegex مباشرة لأنها بتدعم الريجيكس
+		handlerObj := bot.OnRegex(h.Pattern, SafeMessageHandler(h.Handler))
+
+		// لو فيه فلاتر إضافية (زي المشرفين، الجروبات) بنضيفها هنا
+		if len(h.Filters) > 0 {
+			handlerObj.AddFilters(h.Filters...)
+		}
+
+		handlerObj.SetGroup(100)
 	}
 
 	for _, h := range cbHandlers {
