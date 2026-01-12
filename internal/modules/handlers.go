@@ -446,27 +446,26 @@ func Init(bot *telegram.Client, assistants *core.AssistantManager) {
 	})
 
 	// -----------------------------------------------------
-	//  FIXED: حل جذري لمشكلة too many arguments
-	//  1. بنستدعي bot.On بالنمط والدالة فقط.
-	//  2. بنضيف الفلاتر (إن وجدت) بعدين باستخدام .AddFilters
+	//  FIXED: طريقة تسجيل الهاندلرز بدون تمرير slice خاطئ
 	// -----------------------------------------------------
 	for _, h := range handlers {
 		eventPattern := "message:" + h.Pattern
 
-		// استدعاء نظيف بـ 2 معامل فقط عشان نتجنب الخطأ
-		handlerObj := bot.On(eventPattern, SafeMessageHandler(h.Handler))
-
-		// لو فيه فلاتر، نضيفها للكائن اللي رجع
+		// لو فيه فلاتر، نمررهم كـ variadic مباشرة
 		if len(h.Filters) > 0 {
-			handlerObj.AddFilters(h.Filters...)
+			bot.On(eventPattern, SafeMessageHandler(h.Handler), h.Filters...).SetGroup(100)
+		} else {
+			bot.On(eventPattern, SafeMessageHandler(h.Handler)).SetGroup(100)
 		}
-		
-		handlerObj.SetGroup(100)
 	}
 
 	for _, h := range cbHandlers {
-		bot.AddCallbackHandler(h.Pattern, SafeCallbackHandler(h.Handler), h.Filters...).
-			SetGroup(90)
+		// AddCallbackHandler يقبل filters كـ variadic، لذلك h.Filters... شغال
+		if len(h.Filters) > 0 {
+			bot.AddCallbackHandler(h.Pattern, SafeCallbackHandler(h.Handler), h.Filters...).SetGroup(90)
+		} else {
+			bot.AddCallbackHandler(h.Pattern, SafeCallbackHandler(h.Handler)).SetGroup(90)
+		}
 	}
 
 	bot.On("edit:/eval", evalHandle).SetGroup(80)
