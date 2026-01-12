@@ -446,24 +446,25 @@ func Init(bot *telegram.Client, assistants *core.AssistantManager) {
 	})
 
 	// -----------------------------------------------------
-	//  FIXED: التحويل الصحيح للفلاتر لحل مشكلة Type Mismatch
+	//  FIXED: حل جذري لمشكلة too many arguments
+	//  1. بنستدعي bot.On بالنمط والدالة فقط.
+	//  2. بنضيف الفلاتر (إن وجدت) بعدين باستخدام .AddFilters
 	// -----------------------------------------------------
 	for _, h := range handlers {
 		eventPattern := "message:" + h.Pattern
 
-		// عشان الدالة bot.On بتقبل (...any) مش ([]telegram.Filter)
-		// لازم نحول الليستة لنوع عام الأول عشان ينفع نفكها
-		args := make([]interface{}, len(h.Filters))
-		for i, f := range h.Filters {
-			args[i] = f
+		// استدعاء نظيف بـ 2 معامل فقط عشان نتجنب الخطأ
+		handlerObj := bot.On(eventPattern, SafeMessageHandler(h.Handler))
+
+		// لو فيه فلاتر، نضيفها للكائن اللي رجع
+		if len(h.Filters) > 0 {
+			handlerObj.AddFilters(h.Filters...)
 		}
 		
-		// دلوقتي بنبعت الفلاتر مفكوكة (Unpacked) صح
-		bot.On(eventPattern, SafeMessageHandler(h.Handler), args...).SetGroup(100)
+		handlerObj.SetGroup(100)
 	}
 
 	for _, h := range cbHandlers {
-		// CallbackHandlers عادة بتكون محددة النوع فمش هتحتاج تحويل
 		bot.AddCallbackHandler(h.Pattern, SafeCallbackHandler(h.Handler), h.Filters...).
 			SetGroup(90)
 	}
