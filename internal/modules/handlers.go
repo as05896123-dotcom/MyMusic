@@ -446,19 +446,24 @@ func Init(bot *telegram.Client, assistants *core.AssistantManager) {
 	})
 
 	// -----------------------------------------------------
-	//  تم التصحيح: استخدام الصيغة الرسمية لـ gogram
-	//  bot.On("message:REGEX_PATTERN", ...)
+	//  FIXED: التحويل الصحيح للفلاتر لحل مشكلة Type Mismatch
 	// -----------------------------------------------------
 	for _, h := range handlers {
-		// بنركب النمط عشان يكون "message:" + "الريجيكس بتاعنا"
-		// gogram هيفهم تلقائياً إن ده باترن ريجيكس للرسائل
 		eventPattern := "message:" + h.Pattern
+
+		// عشان الدالة bot.On بتقبل (...any) مش ([]telegram.Filter)
+		// لازم نحول الليستة لنوع عام الأول عشان ينفع نفكها
+		args := make([]interface{}, len(h.Filters))
+		for i, f := range h.Filters {
+			args[i] = f
+		}
 		
-		// التسجيل بالطريقة الصحيحة المدعومة في المكتبة
-		bot.On(eventPattern, SafeMessageHandler(h.Handler), h.Filters...).SetGroup(100)
+		// دلوقتي بنبعت الفلاتر مفكوكة (Unpacked) صح
+		bot.On(eventPattern, SafeMessageHandler(h.Handler), args...).SetGroup(100)
 	}
 
 	for _, h := range cbHandlers {
+		// CallbackHandlers عادة بتكون محددة النوع فمش هتحتاج تحويل
 		bot.AddCallbackHandler(h.Pattern, SafeCallbackHandler(h.Handler), h.Filters...).
 			SetGroup(90)
 	}
